@@ -1,4 +1,4 @@
-s = input("File nam: ")
+s = input("File name: ")
 s = s.lower()
 if ".gif" in s:
     print("image/gif")

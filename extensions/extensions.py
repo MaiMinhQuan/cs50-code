@@ -4,7 +4,7 @@ if ".gif" in s:
     print("image/gif")
 elif ".png" in s:
     print("image/png")
-elif ".jgp" in s:
+elif ".jpg" in s:
     print("image/jpeg")
 elif ".jpeg" in s:
     print("image/jpeg")

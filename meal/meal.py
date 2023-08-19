@@ -1,0 +1,1 @@
+s = input("What time is it? ")

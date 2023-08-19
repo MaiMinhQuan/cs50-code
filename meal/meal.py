@@ -12,3 +12,6 @@ def convert(s):
     x,y = s.split(":")
     time = float(x)+float(y)/60
     return time
+
+if __name__ == "__main__":
+    main()

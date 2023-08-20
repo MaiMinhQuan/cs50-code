@@ -20,3 +20,6 @@ a = {
     "tangerine": 50,
     "watermelon": 80,
 }
+
+s = input("Item: ")
+print

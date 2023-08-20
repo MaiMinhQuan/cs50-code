@@ -13,6 +13,9 @@ def is_valid(s):
     for i in range(len(s)-1):
         if s[i].isdigit()==True and s[i+1].isalpha()==True:
             return False
+    for i in range(len(s)-1):
+        if s[i].isalpha()==True and s[i+1]=="0":
+            return False
     for i in s:
         if i.isalpha()==False and i.isdigit()==False:
             return False

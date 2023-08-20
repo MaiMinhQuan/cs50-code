@@ -17,3 +17,5 @@ def is_valid(s):
         if i.isalpha()==False and i.isdigit()==False:
             return False
     return True
+
+main()

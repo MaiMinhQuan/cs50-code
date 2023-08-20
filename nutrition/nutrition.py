@@ -23,4 +23,8 @@ a = {
 
 s = input("Item: ")
 s = s.lower()
-print(f"Calories: {a[s]}")
+for i in a:
+    if i==s:
+        print(f"Calories: {a[s]}")
+
+

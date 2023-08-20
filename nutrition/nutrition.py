@@ -16,10 +16,10 @@ a = {
     "pineapple": 50,
     "plums": 70,
     "strawberries": 50,
-    "sweet cherries":100
+    "sweet cherries": 100,
     "tangerine": 50,
     "watermelon": 80,
 }
 
 s = input("Item: ")
-print
+print(a[s])

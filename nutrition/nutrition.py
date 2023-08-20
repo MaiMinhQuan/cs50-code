@@ -22,4 +22,5 @@ a = {
 }
 
 s = input("Item: ")
-print(f"Calories: {a[s]})
+s = s.lower()
+print(f"Calories: {a[s]}")

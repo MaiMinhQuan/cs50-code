@@ -16,7 +16,7 @@ a = {
     "pineapple": 50,
     "plums": 70,
     "strawberries": 50,
+    "sweet cherries":100
     "tangerine": 50,
     "watermelon": 80,
-    
 }

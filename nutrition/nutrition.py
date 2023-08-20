@@ -22,4 +22,4 @@ a = {
 }
 
 s = input("Item: ")
-print(a[s])
+print(f"Calories: {a[s]})

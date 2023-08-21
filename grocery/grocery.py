@@ -12,3 +12,5 @@ while True:
     else:
         a[s] = 1
 
+for i in a:
+    print(f"{a[i]} {i} ")

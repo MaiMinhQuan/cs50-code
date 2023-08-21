@@ -12,3 +12,5 @@ while True:
             break
     else:
         continue
+
+print(f"{z,x,y}", sep=" ")

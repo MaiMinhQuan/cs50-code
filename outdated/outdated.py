@@ -3,7 +3,7 @@ a = ["January", "February", "March", "April", "May", "June", "July", "August", "
 while True:
     s = input("Date: ")
     if "/" in s:
-        x,y,z = s.split("/")
+        x,y,z = map(int, s.split("/"))
         break
     elif "," in s:
         s = s.replace(",", "")

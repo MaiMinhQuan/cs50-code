@@ -4,6 +4,8 @@ while True:
     s = input("Date: ")
     if "/" in s:
         x,y,z = map(int, s.split("/"))
+        if y>31 or x>12:
+            continue
         break
     elif "," in s:
         s = s.replace(",", "")

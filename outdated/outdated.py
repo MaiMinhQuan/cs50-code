@@ -12,7 +12,7 @@ while True:
             x = a.index(x)+1
             y = int(y)
             z = int(z)
-            if y>31 or x>12:
+            if y>31:
                 continue
             break
     else:

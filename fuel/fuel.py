@@ -1,5 +1,7 @@
 while True:
     s = input("Fraction: ")
+    if s.find("/")==-1:
+        continue
     x,y = s.split("/")
     try:
         x=int(x)

@@ -4,6 +4,7 @@ while True:
     s = input("Date: ")
     if "/" in s:
         x,y,z = s.split("/")
+        break
     elif "," in s:
         s = s.replace(",", "")
         x,y,z = s.split(" ")

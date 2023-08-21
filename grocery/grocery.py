@@ -14,4 +14,4 @@ while True:
 
 
 for i in sorted(a.keys()):
-    print(f"{a[i]} {i} ")
+    print(f"{a[i]} {i}")

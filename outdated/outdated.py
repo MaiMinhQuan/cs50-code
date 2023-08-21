@@ -10,6 +10,10 @@ while True:
         x,y,z = s.split(" ")
         if x in a:
             x = a.index(x)+1
+            y = int(y)
+            z = int(z)
+            if y>31 or x>12:
+                continue
             break
     else:
         continue

@@ -12,5 +12,6 @@ while True:
     else:
         a[s] = 1
 
-for i in a:
+
+for i in sorted(a.keys()):
     print(f"{a[i]} {i} ")

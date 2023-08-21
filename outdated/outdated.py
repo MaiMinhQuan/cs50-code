@@ -18,4 +18,4 @@ while True:
     else:
         continue
 
-print(f"{z,x,y}", sep=" ")
+print(f"{z}-{x:02}-{y:02}")

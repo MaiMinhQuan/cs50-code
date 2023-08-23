@@ -5,7 +5,7 @@ while True:
     if n.isdigit()==False or int(n)<=0:
         continue
     break
-s = 0
+s = randint
 n = int(n)
 while s!= n:
     s = input()

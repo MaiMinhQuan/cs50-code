@@ -13,7 +13,7 @@ else:
 try:
     response = requests.get("https://api.coindesk.com/v1/bpi/currentprice.json")
     response = response.json()
-    rate = response["bpi"]["USD"]["rate-float"]
+    rate = response["bpi"]["USD"]["rate_float"]
     print(f"${x*rate:,.4f}")
 except requests.RequestException:
     print("RequestException")

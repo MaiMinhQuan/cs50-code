@@ -8,16 +8,14 @@ def main():
         result = x + y
         count = 0
         while count<4:
-            try:
-                print(f"{x} + {y} = ", end="")
-                ans = int(input())
-                count+=1
-                if ans == result:
-                    break
-                else:
-                    print("EEE")
-            except:
+            print(f"{x} + {y} = ", end="")
+            ans = input()
+            count+=1
+            if ans.isdigit() == False or int(ans) != result:
                 print("EEE")
+                continue
+            else:
+                break
         if count == 3:
             print(f"{x} + {y} = {result}")
 
@@ -40,3 +38,6 @@ def generrate_integer(level):
         return random.randint(10, 99)
     else:
         return random.randint(100, 999)
+
+if __name__ == "__main__":
+    main()

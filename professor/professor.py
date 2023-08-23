@@ -1,6 +1,7 @@
 import random
 
 def main():
+    score = 0
     for i in range(10):
         level = get_level()
         x = generate_integer(level)
@@ -15,10 +16,11 @@ def main():
                 print("EEE")
                 continue
             else:
+                score+=1
                 break
         if count == 3:
             print(f"{x} + {y} = {result}")
-
+    print(f"Score: {score}")
 
 def get_level():
     while True:

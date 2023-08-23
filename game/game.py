@@ -1,3 +1,6 @@
 import random
 
-while (n = )
+try:
+    while (s = input("Level: ") <=0):
+        continue
+except TypeError:

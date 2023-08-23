@@ -1,6 +1,6 @@
 import sys
 import json
-import request
+import requests
 
 if len(sys.argv) == 2:
     try:
@@ -11,7 +11,7 @@ else:
     sys.exit("Missing command-line argument")
 
 try:
-    response = request.get("https://api.coindesk.com/v1/bpi/currentprice.json")
+    response = requests.get("https://api.coindesk.com/v1/bpi/currentprice.json")
     response = response.json()
     rate = response["bpi"]["USD"]["rate-float"]
     print(f"${x*rate:,.4f}")

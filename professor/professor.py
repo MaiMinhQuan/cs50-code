@@ -8,7 +8,7 @@ def main():
         y = generate_integer(level)
         result = x + y
         count = 0
-        while count<4:
+        while count<3:
             print(f"{x} + {y} = ", end="")
             ans = input()
             count+=1

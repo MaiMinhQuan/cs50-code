@@ -8,6 +8,7 @@ while True:
 
 n = int(n)
 s = random.randint(1, n)
+print(s)
 
 while True:
     i = input("Guess: ")

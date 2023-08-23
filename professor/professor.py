@@ -2,8 +2,8 @@ import random
 
 def main():
     score = 0
-    for i in range(10):
-        level = get_level()
+    level = get_level()
+    for i in range(2):
         x = generate_integer(level)
         y = generate_integer(level)
         result = x + y

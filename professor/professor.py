@@ -3,7 +3,7 @@ import random
 def main():
     score = 0
     level = get_level()
-    for i in range(2):
+    for i in range(10):
         x = generate_integer(level)
         y = generate_integer(level)
         result = x + y

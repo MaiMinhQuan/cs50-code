@@ -33,7 +33,7 @@ def get_level():
         except:
             continue
 
-def generrate_integer(level):
+def generate_integer(level):
     if level == 1:
         return random.randint(0, 9)
     elif level == 2:

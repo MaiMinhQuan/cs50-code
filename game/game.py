@@ -6,7 +6,21 @@ while True:
         continue
     break
 
+s = random.randint(1, n)
+
 while True:
-    
+    i = input("Guess: ")
+    if i.isdigit()==False:
+        continue
+    i = int(i)
+    if i>s:
+        print("Too large!")
+    elif i<s:
+        print("Too small!")
+    else:
+        print("Just right!")
+        break
+
+
 
 

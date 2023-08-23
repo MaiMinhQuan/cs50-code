@@ -6,6 +6,7 @@ while True:
         continue
     break
 
+n = int(n)
 s = random.randint(1, n)
 
 while True:

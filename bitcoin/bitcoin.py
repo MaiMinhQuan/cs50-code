@@ -1,6 +1,6 @@
 import sys
 import json
-inport request
+import request
 
 if len(sys.argv) == 2:
     try:

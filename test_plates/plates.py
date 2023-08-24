@@ -16,4 +16,8 @@ def is_valid(s):
             return False
     for i in s:
         if i.isalnum() == False:
-            return
+            return False
+    return True
+
+if __name__ == "__main__":
+    main()

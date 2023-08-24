@@ -1,4 +1,5 @@
 from fuel import convert, gauge
+import pytest
 
 def main():
     test_ms()
@@ -10,7 +11,7 @@ def test_ms():
 
 def test_ve():
     with pytest.raises(ValueError):
-        convert("cat/dog")
+        convert("monkey/camel")
 
 def test_ci():
     assert convert("1/2") == 50 and gauge(50) == "50%"

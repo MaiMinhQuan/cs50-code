@@ -6,7 +6,8 @@ def convert(i):
     while True:
         try:
             if "/" not in i:
-
+                i = input("Fraction: ")
+                continue
             ts, ms = i.split("/")
             ts = int(ts)
             ms = int(ms)

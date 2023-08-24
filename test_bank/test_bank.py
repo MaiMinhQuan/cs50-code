@@ -3,7 +3,7 @@ def main():
     test_hello()
     test_h()
     test_n()
-
+    test_l()
 
 def test_hello():
     assert value("hello, DAvid") == 0
@@ -16,5 +16,8 @@ def test_h():
 def test_n():
     assert value("who are you?") == 100
     assert value("what 's up?") == 100
+
+def test_l():
+    assert value("HELLO") == 0
 if __name__ == "__main__":
     main()

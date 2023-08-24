@@ -10,4 +10,9 @@ def is_valid(s):
     if s[0].isalpha() == False or s[1].isalpha() == False:
         return False
     for i in range(len(s)):
-        if s[0].isdigit()
+        if s[i].isdigit() == True and s[i+1].isalpha() == True:
+            return False
+        if s[i].isalpha() == True and s[i+1] == "0":
+            return False
+        if s[i].isalnum() == False:
+            return False

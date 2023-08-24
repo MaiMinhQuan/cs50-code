@@ -18,5 +18,7 @@ def test_dau():
     assert shorten(";.") == ";."
     assert shorten(",/") == ",/"
 
+def test_so():
+    assert shorten("1596") == "1596"
 if __name__ == "__main__":
     main()

@@ -1,6 +1,11 @@
 from plates import is_valid
 
 def main():
+    test_2start()
+    test_len()
+    test_numal()
+    test_al0()
+    test_dau()
 
 def test_2start():
     assert is_valid("AA563") == True

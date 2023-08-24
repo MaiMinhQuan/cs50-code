@@ -5,6 +5,8 @@ def main():
 def convert(i):
     while True:
         try:
+            if "/" not in i:
+
             ts, ms = i.split("/")
             ts = int(ts)
             ms = int(ms)

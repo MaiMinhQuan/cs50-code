@@ -10,7 +10,7 @@ def main():
         sys.exit("Input does not exist")
 
     ao = Image.open("shirt.png")
-    kc = shirt.size
+    kc = ao.size
     cs = ImageOps.fit(anh, kc)
     cs.paste(ao, ao)
     cs.save(sys.argv[2])

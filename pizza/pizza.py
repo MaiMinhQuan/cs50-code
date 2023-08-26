@@ -1,5 +1,5 @@
 import sys
-import tabulate
+from tabulate import tabulate
 import csv
 
 def main():
@@ -13,8 +13,8 @@ def main():
     except:
         sys.exit("File does not exit")
 
-    print(pizza)
-    #print(tabulate(pizza[1:], headers = pizza[0], tablefmt = "grid"))
+
+    print(tabulate(pizza[1:], headers = pizza[0], tablefmt = "grid"))
 
 
 def check_input():

@@ -6,7 +6,7 @@ def main():
     tmp = []
     try:
         with open(sys.argv[1]) as before:
-            reader = csv.DictReader(before)
+            reader =  csv.DictReader(before)
             for row in reader:
                 last, first = row["name"].split(", ")
                 tmp.append({"first" : first, "last" : last, "house" : row["house"]})

@@ -3,7 +3,12 @@ import csv
 
 def main():
     check_input()
-    
+    after = []
+    try:
+        with open(sys.argv[1]) as before:
+            reader = csv.DictReader(before)
+            for row in reader:
+                last
 
 
 def check_input():

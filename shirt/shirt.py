@@ -21,8 +21,8 @@ def check_input():
         sys.exit("Too few command-line arguments")
     if len(sys.argv) > 3:
         sys.exit("Too many command-line arfuments")
-    file1 = sys.argv[1].splitext()
-    file2 = sys.argv[2].splitext()
+    file1 = splitext(sys.argv[1])
+    file2 = splitext(sys.argv[2])
     d1 = file1[1]
     d2 = file2[1]
     if check_duoi(d1) == False or check_duoi(d2) == False:

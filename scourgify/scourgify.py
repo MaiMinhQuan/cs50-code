@@ -8,7 +8,12 @@ def main():
         with open(sys.argv[1]) as before:
             reader = csv.DictReader(before)
             for row in reader:
-                last
+                last, first = row["name"].split(", ")
+                after.append({"first" : first, "last" : last, "house" : row["house"]})
+    except:
+        sys.exit(f"Could not read {sys.argv[1]}")
+
+    with open("")
 
 
 def check_input():

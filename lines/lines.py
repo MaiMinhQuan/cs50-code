@@ -3,7 +3,7 @@ import sys
 def main():
     check_input()
     try:
-        with open("hello.py") as file:
+        with open(sys.argv[1]) as file:
             a = file.readlines()
     except:
         sys.exit("File does not exist")
@@ -13,6 +13,7 @@ def main():
         if check_line(line) == False:
             cnt+=1
 
+    print(cnt)
 
 
 def check_input():
@@ -26,7 +27,7 @@ def check_input():
 def check_line(line):
     if line.isspace() == True:
         return True
-    if line.lstrip().startwith("#") == True:
+    if line.lstrip().startswith("#") == True:
         return True
     return False
 

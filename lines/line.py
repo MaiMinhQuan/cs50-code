@@ -5,7 +5,13 @@ def main():
     try:
         with open("hello.py") as file:
             a = file.readlines()
-    except 
+    except:
+        sys.exit("File does not exist")
+
+    cnt = 0
+    for line in a:
+        if check_line(line) == False:
+            cnt+=1
 
 
 
@@ -22,6 +28,7 @@ def check_line(line):
         return True
     if line.lstrip().startwith("#") == True:
         return True
+    return False
 
 if __name__ == "__main__":
     main()

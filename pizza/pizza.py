@@ -13,7 +13,8 @@ def main():
     except:
         sys.exit("File does not exit")
 
-    print(tabulate(pizza[1:], headers = pizza[0], tablefmt = "grid"))
+    print(pizza)
+    #print(tabulate(pizza[1:], headers = pizza[0], tablefmt = "grid"))
 
 
 def check_input():

@@ -3,7 +3,9 @@ import sys
 def main():
     check_input()
     try:
-        with open()
+        with open("hello.py") as file:
+            a = file.readlines()
+    except 
 
 
 

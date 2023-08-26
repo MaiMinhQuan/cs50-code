@@ -4,6 +4,16 @@ from PIL import Image, ImageOps
 
 def main():
     check_input()
+    try:
+        anh = Image.open(sys.argv[1])
+    except:
+        sys.exit("Input does not exist")
+
+    ao = Image.open("shirt.png")
+    kc = shirt.size
+    cs = ImageOps.fit(anh, kc)
+    cs.paste(ao, ao)
+    cs.save(sys.argv[2])
 
 
 def check_input():
@@ -11,7 +21,7 @@ def check_input():
         sys.exit("Too few command-line arguments")
     if len(sys.argv) > 3:
         sys.exit("Too many command-line arfuments")
-    file1 = sys.argv[1].split(".")
+    file1 = sys.argv[1].splitext()
     file2 = sys.argv[2].splitext()
     d1 = file1[1]
     d2 = file2[1]

@@ -4,7 +4,7 @@ def main():
     print(parse(input("HTML: ")))
 
 def parse(s):
-    if match := re.search('.+src="https?://(?:www.)?youtube.com/embed/([a-zA-Z0-9]+?)"', s):
+    if match := re.search(r".+src=\"(?https | http)://(?:www.)?youtube.com/embed/([a-zA-Z0-9]+?)\"", s):
         return "https://youtu.be/" + match.group(1)
     else:
         return "None"

@@ -7,4 +7,5 @@ def count(s):
     a = re.findall(r"\b\W*um\W", s)
     return len(a)
 
-if __name__ == ""
+if __name__ == "__main__":
+    main()

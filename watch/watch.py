@@ -3,5 +3,5 @@ import re
 def main():
     print(parse(input("HTML: ")))
 
-def parse():
+def parse(s):
     if re.search(r"")

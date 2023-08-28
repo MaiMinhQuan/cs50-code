@@ -14,7 +14,7 @@ def convert(s):
          #   raise ValueError
         first = chuan_hoa(a[0], a[1], a[2])
         last = chuan_hoa(a[3], a[4], a[5])
-        return first
+        return a
 
     else:
         raise ValueError

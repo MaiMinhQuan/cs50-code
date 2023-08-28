@@ -4,7 +4,7 @@ def main():
     print(validate(input("IPv4 Address: ")))
 
 def validate(ip):
-    if re.search(r"^(\d+)\.(\d+)\.(\d+)\.(\d+)$", ip):
+    if re.search(r"^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$", ip):
         a = ip.split(".")
         for i in a:
             if int(i) < 0 or int(i) > 255:

@@ -4,4 +4,4 @@ import re
 def main():
 
 def convert(s):
-    match = 
+    match = re.search(r"()", s)

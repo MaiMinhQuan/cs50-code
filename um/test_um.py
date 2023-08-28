@@ -15,7 +15,7 @@ def test_dinh():
 
 def test_hh():
     assert count("um, i think that 's hard") == 1
-    assert count("um..., um, inhale..") == 2
+    assert count("UM..., um, inhale..") == 2
 
 if __name__ == "__main__":
     main()

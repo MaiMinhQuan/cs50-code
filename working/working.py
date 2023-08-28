@@ -5,8 +5,7 @@ def main():
     print(convert(input("Hours: ")))
 
 def convert(s):
-    if match = re.search(r"^([0-9][0-2]?):?([0-5][0-9])? ([AP]M) to ([0-9][0-2]?):?([0-5][0-9])? ([AP]M)$", s)
-    if match:
+    if match := re.search(r"^([0-9][0-2]?):?([0-5][0-9])? ([AP]M) to ([0-9][0-2]?):?([0-5][0-9])? ([AP]M)$", s):
         a = match.groups()
         if int(a[0]) > 12 or int(a[3]) > 12:
             raise ValueError

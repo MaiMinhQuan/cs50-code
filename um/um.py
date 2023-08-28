@@ -4,7 +4,7 @@ def main():
     print(count(input("Input: ")))
 
 def count(s):
-    s=
+    s = s.lower()
     a = re.findall(r"\b\W*um\W*", s)
     return len(a)
 

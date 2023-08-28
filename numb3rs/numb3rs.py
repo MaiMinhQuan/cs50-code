@@ -5,9 +5,8 @@ def main():
     #print(validate(input("IPv4 Address: ")))
     ip = input()
     if matches := re.search("^(\d+)\.(\d+)\.(\d+)\.(\d+)$", ip):
-        a = matches.group()
-        for i in a:
-            print(i)
+        a, b, c, d = matches.group()
+        print(f"{a} {b} {c} {d}")
 
 """def validate(ip):
     try:

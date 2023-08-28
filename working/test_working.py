@@ -9,7 +9,7 @@ def main():
 
 def test_hl():
     assert convert("9 AM to 5 PM") == "09:00 to 17:00"
-    assert convert("7:19 AM to 1:27 PM") == "7:19 to 13:27"
+    assert convert("7:19 AM to 1:27 PM") == "07:19 to 13:27"
 
 def test_saiform():
     with pytest.raises(ValueError):

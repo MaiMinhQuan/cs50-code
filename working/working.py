@@ -10,8 +10,8 @@ def convert(s):
         a = match.groups()
         if int(a[0]) > 12 or int(a[3]) > 12:
             raise ValueError
-        if int(a[1]) >= 60 or int(a[4]) >= 60:
-            raise ValueError
+        #if int(a[1]) >= 60 or int(a[4]) >= 60:
+         #   raise ValueError
         first = chuan_hoa(a[0], a[1], a[2])
         last = chuan_hoa(a[3], a[4], a[5])
         return first

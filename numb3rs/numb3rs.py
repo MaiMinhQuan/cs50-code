@@ -2,7 +2,12 @@ import re
 import sys
 
 def main():
-    print(validate(input("IPv4 Address: ")))
+    #print(validate(input("IPv4 Address: ")))
+    ip = input()
+    if matches := re.search("^(\d+)\.(\d+)\.(\d+)\.(\d+)$", ip):
+        a = matches.group()
+        for i in a:
+            print(i)
 
 """def validate(ip):
     try:
@@ -12,5 +17,6 @@ def main():
             c = int(matches.group(3))
             d = int(matches.group(4))
             if
-
+"""
+main()
 

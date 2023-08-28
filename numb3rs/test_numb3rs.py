@@ -14,7 +14,7 @@ def test_khl():
     assert validate(r"100.100.100.100") == True
     assert validate(r"1000.6.9.213") == False
     assert validate(r"100.5641.26.59") == False
-    assert validate(r"1.2.3.1597") == False
+    assert validate(r"1.666.666.777") == False
     assert validate(r"45.16.7895.23") == False
 
 

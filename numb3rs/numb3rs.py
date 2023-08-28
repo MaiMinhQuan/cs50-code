@@ -1,8 +1,8 @@
 import re
-import sys
 
 def main():
-    print(validate(input("IPv4 Address: ")))
+    ip = input("IPv4 Address: ")
+    print(validate(ip))
 
 def validate(ip):
     try:

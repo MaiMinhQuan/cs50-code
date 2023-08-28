@@ -19,11 +19,13 @@ def validate(ip):
                 return False
             if d < 0 or d > 255:
                 return False
+            return True
         else:
             return False
     except:
         return False
-    return True
+
+    
 if __name__ == "__main__":
     main()
 

@@ -7,7 +7,7 @@ def main():
 
 def test_hl():
     assert count("um um um um") == 4
-    assert count"..um..um....") == 2
+    assert count("..um..um....") == 2
 
 def test_dinh():
     assert count("hum--hum++hum") == 0

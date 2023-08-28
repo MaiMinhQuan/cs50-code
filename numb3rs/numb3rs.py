@@ -7,7 +7,7 @@ def validate(ip):
     if re.search(r"^(\d+)\.(\d+)\.(\d+)\.(\d+)$", ip):
         a = ip.split(".")
         for i in a:
-            if int(i) < 0 or int(i) > 0:
+            if int(i) < 0 or int(i) > 255:
                 return False
         return True
     else:

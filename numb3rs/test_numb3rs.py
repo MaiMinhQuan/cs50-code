@@ -16,6 +16,7 @@ def test_khls():
 def test_khlc():
     assert validate("cat") == False
     assert validate("1.2.3.5.6") == False
+    assert validate("1") == False
 
 if __name__ == "__main__":
     main()

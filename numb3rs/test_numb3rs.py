@@ -11,7 +11,7 @@ def test_hl():
 
 def test_khls():
     assert validate("256.1.5.59") == False
-    assert validate("-1.6.9.213") == False
+    assert validate("1000.6.9.213") == False
 
 def test_khlc():
     assert validate("cat") == False

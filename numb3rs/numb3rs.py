@@ -1,8 +1,7 @@
 import re
 
 def main():
-    ip = input("IPv4 Address: ")
-    print(validate(ip))
+    print(validate(input("IPv4 Address: ")))
 
 def validate(ip):
     if matches := re.search(r"^(\d+)\.(\d+)\.(\d+)\.(\d+)$", ip):

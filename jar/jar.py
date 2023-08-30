@@ -28,3 +28,5 @@ class Jar:
     def size(self):
         return self._size
 
+jar = Jar()
+print(jar.capacity)

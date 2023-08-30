@@ -2,6 +2,13 @@ from fpdf import FPDF
 
 class PDF():
     def __init__(self, name):
-        self.pdf = FPDF()
-        self.pdf.add_page()
-        self.pdf.set_font("helvetica", "B", 50)
+        self.a = FPDF()
+        self.a.add_page()
+        self.a.set_font("helvetica", "B", 50)
+        self.a.cell(0, 60, "CS50 Shirtificate", new_x = "LMARGIN", new_y = "NEXT", align = "C")
+        self.a.image("shirtificate.png", w = self.a.epw)
+        self.a.set_font_size(30)
+        self.a.text_color(255, 255, 255)
+        self.a.text(x = 47.5, y = 140, txt = f"{name} took CS50")
+
+    def save(self)

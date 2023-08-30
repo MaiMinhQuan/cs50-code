@@ -26,8 +26,7 @@ def check_sn(sn):
         ns["month"] = int(match.group(2))
         ns["day"] = int(match.group(3))
         return ns
-    else:
-        return "Invalid"
+    
 
 if __name__ == "__main__":
     main()

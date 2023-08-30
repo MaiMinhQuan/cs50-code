@@ -3,4 +3,7 @@ class Jar:
         if self.capacity < 0:
             raise ValueError
         self.capacity = capacity
-    
+        self.size = 0
+
+    def __str__(self):
+        return ""

@@ -8,10 +8,10 @@ def main():
     sn = input("Date of Birth: ")
     ns = check_sn(sn)
     print(ns)
-    sn = date(ns["year"], ns["month"], ns["day"])
+    """sn = date(ns["year"], ns["month"], ns["day"])
     hn = date.today()
     tg = (hn - sn) * 24 * 60
-    out = chu.number_to_words(tg, andword = "")
+    out = chu.number_to_words(tg, andword = "")"""
     #print(out.capitalize() + "minutes")
 
 

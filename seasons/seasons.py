@@ -6,9 +6,8 @@ p = inflect.engine()
 
 def main():
     sn = input("Date of Birth: ")
-    try:
-        ns = check_sn(sn)
-    except:
+    ns = check_sn(sn)
+    if ns == None:
         sys.exit("Invalid date")
 
     sn = date(ns["year"], ns["month"], ns["day"])

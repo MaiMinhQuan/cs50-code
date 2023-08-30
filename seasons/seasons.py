@@ -11,8 +11,7 @@ def main():
     sn = date(ns["year"], ns["month"], ns["day"])
     hn = date.today()
     tg = (hn - sn) * 24 * 60
-    print(tg)
-    #out = chu.number_to_words(tg, andword = "")
+    out = chu.number_to_words(tg, andword = "")
     #print(out.capitalize() + "minutes")
 
 

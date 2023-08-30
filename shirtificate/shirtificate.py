@@ -8,7 +8,7 @@ class PDF():
         self.a.cell(0, 60, "CS50 Shirtificate", new_x = "LMARGIN", new_y = "NEXT", align = "C")
         self.a.image("shirtificate.png", w = self.a.epw)
         self.a.set_font_size(30)
-        self.a.set_text_color(255, 255, 255)
+        self.a.set_text_color(210, 100, 150)
         self.a.text(x = 47.5, y = 140, txt = f"{t} took CS50")
 
     def save(self, name):

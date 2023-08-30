@@ -6,8 +6,11 @@ p = inflect.engine()
 
 def main():
     sn = input("Date of Birth: ")
-    ns = check_sn(sn)
-
+    try:
+        ns = check_sn(sn)
+    except:
+        sys.exit("Invalid date")
+        
     sn = date(ns["year"], ns["month"], ns["day"])
     hn = date.today()
     tg = int((hn-sn).total_seconds()/60)
@@ -22,8 +25,6 @@ def check_sn(sn):
         ns["month"] = int(match.group(2))
         ns["day"] = int(match.group(3))
         return ns
-    else:
-        sys.exit("Invalid date")
 
 if __name__ == "__main__":
     main()

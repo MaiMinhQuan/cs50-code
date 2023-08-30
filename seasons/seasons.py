@@ -11,11 +11,12 @@ def main():
     except:
         sys.exit("Invalid date")
 
-    sn = date(ns["year"], ns["month"], ns["day"])
-    hn = date.today()
+    #sn = date(ns["year"], ns["month"], ns["day"])
+    print(sn)
+    """hn = date.today()
     tg = int((hn-sn).total_seconds()/60)
-    out = p.number_to_words(tg, andword = "")
-    print(out.capitalize() + " minutes")
+    out = p.number_to_words(tg, andword = "")"""
+    #print(out.capitalize() + " minutes")
 
 
 def check_sn(sn):

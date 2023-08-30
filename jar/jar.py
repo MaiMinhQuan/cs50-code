@@ -28,5 +28,3 @@ class Jar:
     def size(self):
         return self._size
 
-jar = Jar(5)
-print(jar)

@@ -2,7 +2,7 @@ from datetime import date
 import re
 import sys
 import inflect
-chu = inflect.engine()
+p = inflect.engine()
 
 def main():
     sn = input("Date of Birth: ")
@@ -11,7 +11,7 @@ def main():
     sn = date(ns["year"], ns["month"], ns["day"])
     hn = date.today()
     tg = (hn - sn) * 24 * 60
-    out = chu.number_to_words(tg, andword = "")
+    out = p.number_to_words(tg, andword = "")
     #print(out.capitalize() + "minutes")
 
 

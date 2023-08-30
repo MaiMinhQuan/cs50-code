@@ -10,11 +10,9 @@ def main():
 
     sn = date(ns["year"], ns["month"], ns["day"])
     hn = date.today()
-    tg = int((hn - sn) * 24 * 60)
-    print(tg)
-    print(type(tg))
-    #out = p.number_to_words(tg)
-    #print(out.capitalize() + "minutes")
+    tg = int((hn-sn).total_seconds()/60)
+    out = p.number_to_words(tg, andword = "")
+    print(out.capitalize() + " minutes")
 
 
 def check_sn(sn):

@@ -20,7 +20,8 @@ def main():
             if id in b:
                 if id not in IDs:
                     IDs.append(id)
-                    for 
+                    for subject in a:
+                        if id == subject["ID"]
 
             else:
                 print("ID is not valid")

@@ -9,11 +9,11 @@ def main():
             a.append(subject)
             b.append(int(subject["ID"]))
 
-
+    print(a)
     #print(b)
     #print(tabulate(a, headers = {"ID":"ID", "Subject":"Subject", "Day":"Day", "Time":"Time"}, tablefmt = "grid"))
 
-    IDs = []
+    """IDs = []
     timetable = [[""] * 7] * 3
     #print(timetable)
     while True:
@@ -40,8 +40,8 @@ def main():
 
     #IDs.sort()
     #print(IDs)
-    timetable[0][0] = "Hello"
-    print(timetable)
+    #timetable[0][0] = "Hello"
+    print(timetable)"""
 
 
 def day_convert(day):

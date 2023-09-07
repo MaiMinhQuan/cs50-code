@@ -5,9 +5,9 @@ def main():
     b = []
     with open("test.csv") as f:
         reader = csv.DictReader(f)
-        for row in reader:
-            a.append(row)
-            b.append(int(row["ID"]))
+        for subject in reader:
+            a.append(subject)
+            b.append(int(subject["ID"]))
 
 
     #print(b)
@@ -20,7 +20,8 @@ def main():
             if id in b:
                 if id not in IDs:
                     IDs.append(id)
-                    
+                    for 
+
             else:
                 print("ID is not valid")
                 continue

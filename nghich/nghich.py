@@ -40,6 +40,7 @@ def main():
 
     #IDs.sort()
     #print(IDs)
+    timetable[0][0] = "Hello"
     print(timetable)
 
 

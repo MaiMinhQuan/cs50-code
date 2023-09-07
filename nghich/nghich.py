@@ -7,7 +7,7 @@ def main():
         reader = csv.DictReader(f)
         for row in reader:
             a.append(row)
-            b.append(row["ID"])
+            b.append(int(row["ID"]))
 
 
     #print(b)
@@ -16,7 +16,7 @@ def main():
     IDs = []
     while True:
         try:
-            id = input("Subject 's ID: ")
+            id = int(input("Subject 's ID: "))
             if id in b:
                 if id not in IDs:
                     IDs.append(id)

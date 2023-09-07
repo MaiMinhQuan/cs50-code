@@ -4,13 +4,13 @@ def main():
     a = []
     b = []
     with open("test.csv") as f:
-        reader = csv.reader(f)
+        reader = csv.DictReader(f)
         for row in reader:
             a.append(row)
-            b.append(row[0])
+            b.append(row["ID"])
 
 
-    #print(b)
+    print(b)
     #print(tabulate(a[1:], tablefmt = "grid"))
 
     IDs = []

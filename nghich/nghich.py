@@ -9,6 +9,10 @@ def main():
 
     print(tabulate(a[1:], headers = a[0], tablefmt = "grid"))
 
-    
+    try:
+        while True:
+            
+
+
 
 

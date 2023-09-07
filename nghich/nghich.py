@@ -23,10 +23,9 @@ def main():
                 if id not in IDs:
                     IDs.append(id)
                     for subject in a:
-                        if id == subject["ID"]:
+                        if id == int(subject["ID"]):
                             column = day_convert(subject["Day"])
                             row = time_convert(subject["Time"])
-                            print(row, column)
                             timetable[row][column] = subject["Subject"]
             else:
                 print("ID is not valid")
@@ -38,7 +37,8 @@ def main():
     #IDs.sort()
     #print(IDs)
     #print(time_convert("Afternoon"))
-    #print(timetable)
+    print(timetable)
+    print(tabulate(timetable, tablefmt = "grid"))
 
 
 def day_convert(day):

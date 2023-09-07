@@ -20,6 +20,7 @@ def main():
             if id in b:
                 if id not in IDs:
                     IDs.append(id)
+                    
             else:
                 print("ID is not valid")
                 continue

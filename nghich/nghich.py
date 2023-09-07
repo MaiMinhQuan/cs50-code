@@ -14,9 +14,9 @@ def main():
     #print(tabulate(a, headers = {"ID":"ID", "Subject":"Subject", "Day":"Day", "Time":"Time"}, tablefmt = "grid"))
 
     IDs = []
-    timetable = [[0] * 7] * 3
+    timetable = table_0(3,7)
     #print(timetable)
-    """while True:
+    while True:
         try:
             id = int(input("Subject 's ID: "))
             if id in b:
@@ -39,8 +39,7 @@ def main():
             break
 
     #IDs.sort()
-    #print(IDs)"""
-    timetable[0][1] = 15
+    #print(IDs)
     print(timetable)
 
 
@@ -67,6 +66,15 @@ def time_convert(time):
         return 1
     if time == "Evening":
         return 2
+
+def table_0(r, c):
+    table = []
+    for i in range(r):
+        row = []
+        for j in range (c):
+            row.append(0)
+        table.append(row)
+    return table
 
 
 

@@ -9,9 +9,15 @@ def main():
 
     print(tabulate(a[1:], headers = a[0], tablefmt = "grid"))
 
-    try:
-        while True:
-            
+    IDs = []
+    while True:
+        try:
+            id = input("Subject 's ID: ")
+            if id not in IDs:
+                IDs.append(id)
+
+
+
 
 
 

@@ -17,7 +17,7 @@ def main():
             id = input("Subject 's ID: ")
             if id not in IDs:
                 IDs.append(id)"""
-
+main()
 
 
 

@@ -9,14 +9,14 @@ def main():
             a.append(subject)
             b.append(int(subject["ID"]))
 
-    print(a)
+    #print(a)
     #print(b)
     #print(tabulate(a, headers = {"ID":"ID", "Subject":"Subject", "Day":"Day", "Time":"Time"}, tablefmt = "grid"))
 
     IDs = []
     timetable = table_0(3,7)
     #print(timetable)
-    """while True:
+    while True:
         try:
             id = int(input("Subject 's ID: "))
             if id in b:
@@ -26,11 +26,8 @@ def main():
                         if id == subject["ID"]:
                             column = day_convert(subject["Day"])
                             row = time_convert(subject["Time"])
+                            print(row, column)
                             timetable[row][column] = subject["Subject"]
-
-
-
-
             else:
                 print("ID is not valid")
                 continue
@@ -40,8 +37,8 @@ def main():
 
     #IDs.sort()
     #print(IDs)
-    print(day_convert("Friday"))
-    #print(timetable)"""
+    #print(time_convert("Afternoon"))
+    #print(timetable)
 
 
 def day_convert(day):
@@ -76,17 +73,6 @@ def table_0(r, c):
             row.append(0)
         table.append(row)
     return table
-
-
-
-
-
-
-
-
-
-
-
 
 
 

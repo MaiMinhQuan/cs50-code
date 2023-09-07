@@ -1,23 +1,47 @@
 from tabulate import tabulate
 import csv
 def main():
+    a = []
+    b = []
     with open("test.csv") as f:
-        a = []
         reader = csv.reader(f)
         for row in reader:
             a.append(row)
+            b.append(row[0])
 
 
-    print(a)
-    print(tabulate(a[1:], tablefmt = "grid"))
+    #print(b)
+    #print(tabulate(a[1:], tablefmt = "grid"))
 
-    """"IDs = []
+    IDs = []
     while True:
         try:
             id = input("Subject 's ID: ")
-            if id not in IDs:
-                IDs.append(id)"""
-main()
+            if id in b:
+                if id not in IDs:
+                    IDs.append(id)
+            else:
+                print("ID is not valid")
+                continue
+        except EOFError:
+            print()
+            break
+
+    print(IDs)
+
+
+
+
+
+
+
+
+
+
+
+
+if __name__ == "__main__":
+    main()
 
 
 

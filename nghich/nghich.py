@@ -11,9 +11,9 @@ def main():
 
 
     #print(b)
-    print(tabulate(a, tablefmt = "grid"))
+    print(tabulate(a, headers = {"ID":"ID", "Subject":"Subject", "Day":"Day", "Time":"Time"}, tablefmt = "grid"))
 
-    """IDs = []
+    IDs = []
     while True:
         try:
             id = int(input("Subject 's ID: "))
@@ -29,7 +29,7 @@ def main():
 
     print(IDs)
     IDs.sort()
-    print(IDs)"""
+    print(IDs)
 
 
 

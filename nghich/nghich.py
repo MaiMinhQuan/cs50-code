@@ -6,6 +6,6 @@ with open("test.csv") as f:
     for row in reader:
         a.append(row)
 
-print(tabulate(a, tablefmt = "grid"))
+print(tabulate(a[1:], headers = a[0], tablefmt = "grid"))
 
 

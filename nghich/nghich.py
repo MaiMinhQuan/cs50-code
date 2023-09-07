@@ -14,7 +14,8 @@ def main():
     print(tabulate(a, headers = {"ID":"ID", "Subject":"Subject", "Day":"Day", "Time":"Time"}, tablefmt = "grid"))
 
     IDs = []
-    timetable = []
+    timetable = [[0] * 7] * 3
+    #print(timetable)
     while True:
         try:
             id = int(input("Subject 's ID: "))
@@ -23,7 +24,9 @@ def main():
                     IDs.append(id)
                     for subject in a:
                         if id == subject["ID"]:
-                            co = day_convert(subject["Day"])
+                            column = day_convert(subject["Day"])
+                            row = time_convert(subject["Time"])
+                            timetable[row][column] = subject
 
 
 

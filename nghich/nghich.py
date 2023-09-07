@@ -10,7 +10,7 @@ def main():
             b.append(row["ID"])
 
 
-    print(b)
+    #print(b)
     #print(tabulate(a[1:], tablefmt = "grid"))
 
     IDs = []
@@ -27,6 +27,7 @@ def main():
             print()
             break
 
+    print(IDs)
     IDs.sort()
     print(IDs)
 

@@ -27,7 +27,9 @@ def main():
             print()
             break
 
-    #print(IDs)
+    sorted(IDs)
+    print(IDs)
+
 
 
 

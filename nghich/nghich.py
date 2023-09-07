@@ -27,7 +27,7 @@ def main():
             print()
             break
 
-    print(IDs)
+    #print(IDs)
 
 
 

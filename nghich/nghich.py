@@ -11,10 +11,10 @@ def main():
 
 
     #print(b)
-    print(tabulate(a, headers = {"ID":"ID", "Subject":"Subject", "Day":"Day", "Time":"Time"}, tablefmt = "grid"))
+    #print(tabulate(a, headers = {"ID":"ID", "Subject":"Subject", "Day":"Day", "Time":"Time"}, tablefmt = "grid"))
 
     IDs = []
-    timetable = [[0] * 7] * 3
+    timetable = [[""] * 7] * 3
     #print(timetable)
     while True:
         try:
@@ -26,7 +26,7 @@ def main():
                         if id == subject["ID"]:
                             column = day_convert(subject["Day"])
                             row = time_convert(subject["Time"])
-                            timetable[row][column] = subject
+                            timetable[row][column] = subject["Subject"]
 
 
 
@@ -40,6 +40,7 @@ def main():
 
     #IDs.sort()
     #print(IDs)
+    print(timetable)
 
 
 def day_convert(day):

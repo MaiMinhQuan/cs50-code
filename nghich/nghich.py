@@ -9,14 +9,14 @@ def main():
             a.append(subject)
             b.append(int(subject["ID"]))
 
-    #print(a)
+    print(a)
     #print(b)
     #print(tabulate(a, headers = {"ID":"ID", "Subject":"Subject", "Day":"Day", "Time":"Time"}, tablefmt = "grid"))
 
     IDs = []
     timetable = table_0(3,7)
     #print(timetable)
-    while True:
+    """while True:
         try:
             id = int(input("Subject 's ID: "))
             if id in b:
@@ -40,31 +40,32 @@ def main():
 
     #IDs.sort()
     #print(IDs)
-    print(timetable)
+    print(day_convert("Friday"))
+    #print(timetable)"""
 
 
 def day_convert(day):
     if day == "Monday":
         return 0
-    if day == "Tuesday":
+    elif day == "Tuesday":
         return 1
-    if day == "Wednesday":
+    elif day == "Wednesday":
         return 2
-    if day == "Thursday":
+    elif day == "Thursday":
         return 3
-    if day == "Fridayday":
+    elif day == "Friday":
         return 4
-    if day == "Saturday":
+    elif day == "Saturday":
         return 5
-    if day == "Sunday":
+    elif day == "Sunday":
         return 6
 
 def time_convert(time):
     if time == "Morning":
         return 0
-    if time == "Afternoon":
+    elif time == "Afternoon":
         return 1
-    if time == "Evening":
+    elif time == "Evening":
         return 2
 
 def table_0(r, c):

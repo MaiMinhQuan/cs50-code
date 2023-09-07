@@ -11,7 +11,7 @@ def main():
 
 
     #print(b)
-    print(tabulate(a, headers = ["ID", "Subject", "Day", "Time"] tablefmt = "grid"))
+    print(tabulate(a, headers = ["ID", "Subject", "Day", "Time"], tablefmt = "grid"))
 
     """IDs = []
     while True:

@@ -49,7 +49,7 @@ def main():
     timetable[3][0] = "Evening"
 
     #enter name
-
+    while check_name()
     #select subjects
     selected_IDs = []
     print("Please enter subject 's IDs")
@@ -111,7 +111,7 @@ def time_convert(time):
         return 3
 
 def check_name(name):
-    return match := re.search(r"", name)
+    return re.search(r"^(\w|' ')+", name)
 
 
 if __name__ == "__main__":

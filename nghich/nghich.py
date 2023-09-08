@@ -63,7 +63,7 @@ def main():
                             row = time_convert(subject["Time"])
                             if timetable[row][column] != "":
                                 print(f"There is already a registered subject in the time of {subject['Subject']}")
-                                answer = input(f"Do you still want to register {subject['Subject']}?(y/n)")
+                                answer = input(f"Do you still want to register {subject['Subject']}?(y/n) ")
                                 if answer == "n":
                                     continue
                             timetable[row][column] = subject["Subject"]

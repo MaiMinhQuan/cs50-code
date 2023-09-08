@@ -45,7 +45,6 @@ def main():
     timetable[1][0] = "Morning"
     timetable[2][0] = "Afternoon"
     timetable[3][0] = "Evening"
-    #print(timetable)
 
 
     #select subjects
@@ -81,9 +80,6 @@ def main():
             print()
             break
 
-    #IDs.sort()
-    #print(selected_IDs)
-    #print(timetable)
     print(tabulate(timetable[1:], headers = timetable[0], tablefmt = "grid"))
 
 

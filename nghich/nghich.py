@@ -70,7 +70,9 @@ def main():
                                     del selected_IDs[len(selected_IDs)-1]
                                     continue
                                 if answer == "y":
-                                    for 
+                                    for subject1 in subjects:
+                                        if subject1["Subject"] == subject["Subject"]:
+                                            
                             timetable[row][column] = subject["Subject"]
             else:
                 print("ID is not valid")

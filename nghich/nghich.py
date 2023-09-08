@@ -86,6 +86,13 @@ def time_convert(time):
     elif time == "Evening":
         return 3
 
+def check_input():
+    if len(sys.argv) < 2:
+        sys.exit("Too few command-line arguments")
+    if len(sys.argv) > 2:
+        sys.exit("Too many command-line arguments")
+    if ".csv" not in sys.argv[1]:
+        sys.exit("Not a CSV file")
 
 
 if __name__ == "__main__":

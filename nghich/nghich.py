@@ -23,17 +23,17 @@ def main():
         for j in range (8):
             row.append("")
         timetable.append(row)
-    table[0][1] = "Monday"
-    table[0][2] = "Tuesday"
-    table[0][3] = "Wednesday"
-    table[0][4] = "Thursday"
-    table[0][5] = "Friday"
-    table[0][6] = "Saturday"
-    table[0][7] = "Sunday"
-    table[1][0] = "Morning"
-    table[2][0] = "Afternoon"
-    table[3][0] = "Evening"
-    print(timetable)
+    timetable[0][1] = "Monday"
+    timetable[0][2] = "Tuesday"
+    timetable[0][3] = "Wednesday"
+    timetable[0][4] = "Thursday"
+    timetable[0][5] = "Friday"
+    timetable[0][6] = "Saturday"
+    timetable[0][7] = "Sunday"
+    timetable[1][0] = "Morning"
+    timetable[2][0] = "Afternoon"
+    timetable[3][0] = "Evening"
+    #print(timetable)
     while True:
         try:
             id = int(input("Subject 's ID: "))
@@ -56,7 +56,7 @@ def main():
     #print(IDs)
     #print(time_convert("Afternoon"))
     #print(timetable)
-    #print(tabulate(timetable, tablefmt = "grid"))
+    print(tabulate(timetable, tablefmt = "grid"))
 
 
 def day_convert(day):

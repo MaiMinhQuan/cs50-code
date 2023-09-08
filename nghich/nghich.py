@@ -58,7 +58,6 @@ def main():
 
     #IDs.sort()
     #print(IDs)
-    #print(time_convert("Afternoon"))
     #print(timetable)
     print(tabulate(timetable[1:], headers = timetable[0], tablefmt = "grid"))
 

@@ -67,6 +67,7 @@ def main():
                                 while answer != "y" and answer != "n":
                                     answer = input(f"Do you still want to register {subject['Subject']}?(y/n) ")
                                 if answer == "n":
+                                    del selected_IDs[len(selected_IDs)-1]
                                     continue
                             timetable[row][column] = subject["Subject"]
             else:

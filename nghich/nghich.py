@@ -15,9 +15,25 @@ def main():
     #print(b)
     #print(tabulate(a, headers = {"ID":"ID", "Subject":"Subject", "Day":"Day", "Time":"Time"}, tablefmt = "grid"))
 
+    #list that stores timetable
     IDs = []
-    timetable = table(3,7)
-    #print(timetable)
+    timetable = []
+    for i in range(4):
+        row = []
+        for j in range (8):
+            row.append("")
+        timetable.append(row)
+    table[0][1] = "Monday"
+    table[0][2] = "Tuesday"
+    table[0][3] = "Wednesday"
+    table[0][4] = "Thursday"
+    table[0][5] = "Friday"
+    table[0][6] = "Saturday"
+    table[0][7] = "Sunday"
+    table[1][0] = "Morning"
+    table[2][0] = "Afternoon"
+    table[3][0] = "Evening"
+    print(timetable)
     while True:
         try:
             id = int(input("Subject 's ID: "))
@@ -40,7 +56,7 @@ def main():
     #print(IDs)
     #print(time_convert("Afternoon"))
     #print(timetable)
-    print(tabulate(timetable, tablefmt = "grid"))
+    #print(tabulate(timetable, tablefmt = "grid"))
 
 
 def day_convert(day):
@@ -69,21 +85,7 @@ def time_convert(time):
 
 def table(r, c):
     table = []
-    for i in range(r+1):
-        row = []
-        for j in range (c+1):
-            row.append("")
-        table.append(row)
-    table[0][1] = "Monday"
-    table[0][2] = "Tuesday"
-    table[0][3] = "Wednesday"
-    table[0][4] = "Thursday"
-    table[0][5] = "Friday"
-    table[0][6] = "Saturday"
-    table[0][7] = "Sunday"
-    table[1][0] = "Morning"
-    table[2][0] = "Afternoon"
-    table[3][0] = "Evening"
+
     return table
 
 

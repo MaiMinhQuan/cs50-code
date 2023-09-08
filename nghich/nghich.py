@@ -26,7 +26,7 @@ def main():
         sys.exit("File does not exit")
 
 
-    #print(b)
+    
     print(tabulate(subjects, headers = {"ID":"ID", "Subject":"Subject", "Day":"Day", "Time":"Time"}, tablefmt = "grid"))
     print()
 

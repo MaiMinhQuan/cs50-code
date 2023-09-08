@@ -63,11 +63,11 @@ def main():
                             row = time_convert(subject["Time"])
                             if timetable[row][column] != "":
                                 print(f"There is already a registered subject in the time of {subject['Subject']}")
-                                answer = input(f"Do you still want to register {subject['Subject']}?(y/n) ")
+                                answer = ""
+                                while answer != "y" or answer != "n":
+                                    answer = input(f"Do you still want to register {subject['Subject']}?(y/n) ")
                                 if answer == "n":
                                     continue
-                                if answer != "y":
-                                    print("The answer must be 'y' or 'n'")
                             timetable[row][column] = subject["Subject"]
             else:
                 print("ID is not valid")

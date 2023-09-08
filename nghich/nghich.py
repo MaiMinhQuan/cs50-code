@@ -62,7 +62,7 @@ def main():
                             column = day_convert(subject["Day"])
                             row = time_convert(subject["Time"])
                             if timetable[row][column] != "":
-                                print("There is already a subject")
+                                print(f"There is already a registered subject in the time of {subject["Subject"]}")
                             timetable[row][column] = subject["Subject"]
             else:
                 print("ID is not valid")

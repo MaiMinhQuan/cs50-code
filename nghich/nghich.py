@@ -26,9 +26,17 @@ def main():
         sys.exit("File does not exit")
 
 
-    
+
     print(tabulate(subjects, headers = {"ID":"ID", "Subject":"Subject", "Day":"Day", "Time":"Time"}, tablefmt = "grid"))
     print()
+
+    #enter name
+    while True:
+        name = input("PLease enter your real name: ")
+        if check_name(name):
+            break
+        else:
+            print("Invalid name")
 
     #list that stores timetable
     timetable = []
@@ -47,12 +55,8 @@ def main():
     timetable[1][0] = "Morning"
     timetable[2][0] = "Afternoon"
     timetable[3][0] = "Evening"
+    timetable[0][0] = name
 
-    #enter name
-    while True:
-        name = input("PLease enter your name: ")
-        if check_name(name) == True:
-            break
     #select subjects
     selected_IDs = []
     print("Please enter subject 's IDs")
@@ -114,7 +118,10 @@ def time_convert(time):
         return 3
 
 def check_name(name):
-    return re.search(r"^(\w|' ')+", name)
+    if re.search(r"^[a-zA-Z ]+", name):
+        return True
+    else:
+        return False
 
 
 if __name__ == "__main__":

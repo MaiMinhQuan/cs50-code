@@ -1,5 +1,6 @@
 from tabulate import tabulate
 import csv
+import sys
 def main():
     #list that stores row in csv file
     subjects = []

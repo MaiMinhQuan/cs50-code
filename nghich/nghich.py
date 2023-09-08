@@ -71,7 +71,7 @@ def main():
                                     continue
                                 if answer == "y":
                                     for subject1 in subjects:
-                                        if subject1["Subject"] == subject["Subject"]:
+                                        if subject1["Subject"] == timetable[row][column]:
                                             selected_IDs.remove(int(subject1["ID"]))
                             timetable[row][column] = subject["Subject"]
             else:

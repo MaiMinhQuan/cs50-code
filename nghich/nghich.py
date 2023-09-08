@@ -1,6 +1,7 @@
 from tabulate import tabulate
 import csv
 import sys
+import re
 def main():
     #check input
     if len(sys.argv) < 2:
@@ -27,6 +28,7 @@ def main():
 
     #print(b)
     print(tabulate(subjects, headers = {"ID":"ID", "Subject":"Subject", "Day":"Day", "Time":"Time"}, tablefmt = "grid"))
+    print()
 
     #list that stores timetable
     timetable = []
@@ -46,6 +48,7 @@ def main():
     timetable[2][0] = "Afternoon"
     timetable[3][0] = "Evening"
 
+    #enter name
 
     #select subjects
     selected_IDs = []
@@ -107,6 +110,8 @@ def time_convert(time):
     elif time == "Evening":
         return 3
 
+def check_name(name):
+    return match := re.search(r"", name)
 
 
 if __name__ == "__main__":

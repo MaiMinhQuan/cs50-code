@@ -1,7 +1,9 @@
 from tabulate import tabulate
 import csv
 def main():
+    #list that stores row in csv file
     a = []
+    #list that stores IDs of subject
     b = []
     with open("test.csv") as f:
         reader = csv.DictReader(f)

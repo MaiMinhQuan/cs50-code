@@ -37,41 +37,51 @@ def main():
     #IDs.sort()
     #print(IDs)
     #print(time_convert("Afternoon"))
-    print(timetable)
+    #print(timetable)
     print(tabulate(timetable, tablefmt = "grid"))
 
 
 def day_convert(day):
     if day == "Monday":
-        return 0
-    elif day == "Tuesday":
         return 1
-    elif day == "Wednesday":
+    elif day == "Tuesday":
         return 2
-    elif day == "Thursday":
+    elif day == "Wednesday":
         return 3
-    elif day == "Friday":
+    elif day == "Thursday":
         return 4
-    elif day == "Saturday":
+    elif day == "Friday":
         return 5
-    elif day == "Sunday":
+    elif day == "Saturday":
         return 6
+    elif day == "Sunday":
+        return 7
 
 def time_convert(time):
     if time == "Morning":
-        return 0
-    elif time == "Afternoon":
         return 1
-    elif time == "Evening":
+    elif time == "Afternoon":
         return 2
+    elif time == "Evening":
+        return 3
 
 def table(r, c):
     table = []
-    for i in range(r):
+    for i in range(r+1):
         row = []
-        for j in range (c):
+        for j in range (c+1):
             row.append("")
         table.append(row)
+    table[0][1] = "Monday"
+    table[0][2] = "Tuesday"
+    table[0][3] = "Wednesday"
+    table[0][4] = "Thursday"
+    table[0][5] = "Friday"
+    table[0][6] = "Saturday"
+    table[0][7] = "Sunday"
+    table[1][0] = "Morning"
+    table[2][0] = "Afternoon"
+    table[3][0] = "Evening"
     return table
 
 

@@ -50,7 +50,7 @@ def main():
 
     #select subjects
     IDs = []
-    print("Please enter subject 's IDs: ")
+    print("Please enter subject 's IDs")
     while True:
         try:
             id = int(input("Subject 's ID: "))

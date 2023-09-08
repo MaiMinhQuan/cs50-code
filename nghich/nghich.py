@@ -61,6 +61,8 @@ def main():
                         if id == int(subject["ID"]):
                             column = day_convert(subject["Day"])
                             row = time_convert(subject["Time"])
+                            if timetable[row][column] != "":
+                                print("")
                             timetable[row][column] = subject["Subject"]
             else:
                 print("ID is not valid")

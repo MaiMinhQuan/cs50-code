@@ -1,6 +1,7 @@
 import re
 
-
 name = input("Name: ")
-match = re.search(r"^\w+", name)
-print(match)
+if re.search(r"^\w+", name):
+    print("Valid")
+else:
+    print("Invalid")

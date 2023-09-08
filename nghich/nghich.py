@@ -49,7 +49,10 @@ def main():
     timetable[3][0] = "Evening"
 
     #enter name
-    while check_name()
+    while True:
+        name = input("PLease enter your name: ")
+        if check_name(name) == True:
+            break
     #select subjects
     selected_IDs = []
     print("Please enter subject 's IDs")

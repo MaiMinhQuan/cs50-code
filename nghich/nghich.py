@@ -2,15 +2,19 @@ from tabulate import tabulate
 import csv
 import sys
 def main():
+    check_input()
     #list that stores row in csv file
     subjects = []
     #list that stores IDs of subject
     b = []
-    with open("test.csv") as f:
-        reader = csv.DictReader(f)
-        for subject in reader:
-            subjects.append(subject)
-            b.append(int(subject["ID"]))
+    try:
+        with open(sys.argv[1]) as f:
+            reader = csv.DictReader(f)
+            for subject in reader:
+                subjects.append(subject)
+                b.append(int(subject["ID"]))
+    except:
+        sys.exit("File does not exit")
 
 
     #print(b)

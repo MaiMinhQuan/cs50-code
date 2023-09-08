@@ -2,13 +2,13 @@ from tabulate import tabulate
 import csv
 def main():
     #list that stores row in csv file
-    a = []
+    subjects = []
     #list that stores IDs of subject
     b = []
     with open("test.csv") as f:
         reader = csv.DictReader(f)
         for subject in reader:
-            a.append(subject)
+            subjects.append(subject)
             b.append(int(subject["ID"]))
 
     #print(a)
@@ -34,13 +34,16 @@ def main():
     timetable[2][0] = "Afternoon"
     timetable[3][0] = "Evening"
     #print(timetable)
+
+
+    #select subjects
     while True:
         try:
             id = int(input("Subject 's ID: "))
             if id in b:
                 if id not in IDs:
                     IDs.append(id)
-                    for subject in a:
+                    for subject in subjects:
                         if id == int(subject["ID"]):
                             column = day_convert(subject["Day"])
                             row = time_convert(subject["Time"])
@@ -82,11 +85,6 @@ def time_convert(time):
         return 2
     elif time == "Evening":
         return 3
-
-def table(r, c):
-    table = []
-
-    return table
 
 
 

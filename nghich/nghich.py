@@ -69,6 +69,8 @@ def main():
                                 if answer == "n":
                                     del selected_IDs[len(selected_IDs)-1]
                                     continue
+                                if answer == "y":
+                                    for 
                             timetable[row][column] = subject["Subject"]
             else:
                 print("ID is not valid")

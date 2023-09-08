@@ -49,14 +49,14 @@ def main():
 
 
     #select subjects
-    IDs = []
+    selected_IDs = []
     print("Please enter subject 's IDs")
     while True:
         try:
             id = int(input("Subject 's ID: "))
             if id in valid_IDs:
-                if id not in IDs:
-                    IDs.append(id)
+                if id not in selected_IDs:
+                    selected_IDs.append(id)
                     for subject in subjects:
                         if id == int(subject["ID"]):
                             column = day_convert(subject["Day"])
@@ -70,7 +70,7 @@ def main():
             break
 
     #IDs.sort()
-    #print(IDs)
+    #print(selected_IDs)
     #print(timetable)
     print(tabulate(timetable[1:], headers = timetable[0], tablefmt = "grid"))
 

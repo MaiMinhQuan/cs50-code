@@ -108,6 +108,8 @@ def day_convert(day):
         return 6
     elif day == "Sunday":
         return 7
+    else:
+        return "Day is invalid"
 
 def time_convert(time):
     if time == "Morning":
@@ -116,6 +118,8 @@ def time_convert(time):
         return 2
     elif time == "Evening":
         return 3
+    else:
+        return "Time is invalid"
 
 def check_name(name):
     if re.search(r"^[a-zA-Z ]+$", name):

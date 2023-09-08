@@ -11,9 +11,9 @@ def main():
             subjects.append(subject)
             b.append(int(subject["ID"]))
 
-    #print(a)
+
     #print(b)
-    #print(tabulate(a, headers = {"ID":"ID", "Subject":"Subject", "Day":"Day", "Time":"Time"}, tablefmt = "grid"))
+    print(tabulate(subjects, headers = {"ID":"ID", "Subject":"Subject", "Day":"Day", "Time":"Time"}, tablefmt = "grid"))
 
     #list that stores timetable
     IDs = []
@@ -59,7 +59,7 @@ def main():
     #print(IDs)
     #print(time_convert("Afternoon"))
     #print(timetable)
-    print(tabulate(timetable, tablefmt = "grid"))
+    print(tabulate(timetable[1:], headers = timetable[0], tablefmt = "grid"))
 
 
 def day_convert(day):

@@ -63,6 +63,7 @@ def main():
                             row = time_convert(subject["Time"])
                             if timetable[row][column] != "":
                                 print(f"There is already a registered subject in the time of {subject["Subject"]}")
+                                answer = input("Do you still want to register")
                             timetable[row][column] = subject["Subject"]
             else:
                 print("ID is not valid")

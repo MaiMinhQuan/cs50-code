@@ -7,7 +7,7 @@ def main():
         sys.exit("Too few command-line arguments")
     if len(sys.argv) > 2:
         sys.exit("Too many command-line arguments")
-    if ".csv" not in sys.argv[1]:
+    if sys.argv[1].endswith(".csv") == False:
         sys.exit("Not a CSV file")
 
     #list that stores row in csv file

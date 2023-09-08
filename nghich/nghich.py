@@ -14,13 +14,13 @@ def main():
     subjects = []
 
     #list that stores IDs of subject
-    b = []
+    valid_IDs = []
     try:
         with open(sys.argv[1]) as f:
             reader = csv.DictReader(f)
             for subject in reader:
                 subjects.append(subject)
-                b.append(int(subject["ID"]))
+                valid_IDs.append(int(subject["ID"]))
     except:
         sys.exit("File does not exit")
 
@@ -53,7 +53,7 @@ def main():
     while True:
         try:
             id = int(input("Subject 's ID: "))
-            if id in b:
+            if id in valid_IDs:
                 if id not in IDs:
                     IDs.append(id)
                     for subject in subjects:

@@ -64,7 +64,7 @@ def main():
                             if timetable[row][column] != "":
                                 print(f"There is already a registered subject in the time of {subject['Subject']}")
                                 answer = ""
-                                while answer != "y" or answer != "n":
+                                while answer != "y" and answer != "n":
                                     answer = input(f"Do you still want to register {subject['Subject']}?(y/n) ")
                                 if answer == "n":
                                     continue

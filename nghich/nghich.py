@@ -29,7 +29,6 @@ def main():
     print(tabulate(subjects, headers = {"ID":"ID", "Subject":"Subject", "Day":"Day", "Time":"Time"}, tablefmt = "grid"))
 
     #list that stores timetable
-    IDs = []
     timetable = []
     for i in range(4):
         row = []
@@ -50,6 +49,7 @@ def main():
 
 
     #select subjects
+    IDs = []
     while True:
         try:
             id = int(input("Subject 's ID: "))

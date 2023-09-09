@@ -64,6 +64,7 @@ def main():
         try:
             id = input("Subject 's ID: ")
             try:
+                print("ID is invalid")
                 id = int(id)
             except ValueError:
                 continue

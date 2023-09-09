@@ -65,6 +65,7 @@ def main():
             try:
                 id = int(input("Subject 's ID: "))
             except:
+                print("ID is not valid")
                 continue
             if id in valid_IDs:
                 if id not in selected_IDs:

@@ -122,7 +122,7 @@ def time_convert(time):
         return "Time is invalid"
 
 def check_name(name):
-    if re.search(r"^[a-zA-Z ]+$", name):
+    if re.search(r"^[a-zA-Z][a-zA-Z ]+$", name):
         return True
     else:
         return False

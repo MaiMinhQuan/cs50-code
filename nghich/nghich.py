@@ -64,7 +64,8 @@ def main():
         try:
             try:
                 id = int(input("Subject 's ID: "))
-            
+            except:
+                continue
             if id in valid_IDs:
                 if id not in selected_IDs:
                     selected_IDs.append(id)

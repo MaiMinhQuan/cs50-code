@@ -64,9 +64,9 @@ def main():
         try:
             id = input("Subject 's ID: ")
             try:
-                print("ID is invalid")
                 id = int(id)
             except ValueError:
+                print("ID is invalid")
                 continue
             if id in valid_IDs:
                 if id not in selected_IDs:

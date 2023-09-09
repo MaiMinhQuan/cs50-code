@@ -1,8 +1,9 @@
 from nghich import check_name, day_convert, time_convert
 
 def test_check_name():
+    assert check_name("a") == True
     assert check_name("Quan") == True
-    assert check_name(" vu trong  phung") == True
+    assert check_name(" vu trong  phung") == False
     assert check_name("Mai2004") == False
     assert check_name("vu-1945") == False
     assert check_name("2john?") == False

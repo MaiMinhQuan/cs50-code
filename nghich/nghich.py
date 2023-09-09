@@ -62,7 +62,11 @@ def main():
     print("Please enter subject 's IDs")
     while True:
         try:
-            id = int(input("Subject 's ID: "))
+            id = input("Subject 's ID: ")
+            try:
+                id = int(id)
+            except ValueError:
+                continue
             if id in valid_IDs:
                 if id not in selected_IDs:
                     selected_IDs.append(id)

@@ -69,7 +69,11 @@ def main():
                     for subject in subjects:
                         if id == subject["ID"]:
                             column = day_convert(subject["Day"])
+                            if column == "Day is invalid":
+                                continue
                             row = time_convert(subject["Time"])
+                            if row == "Time is invalid":
+                                continue
                             if timetable[row][column] != "":
                                 print(f"There is already a registered subject in the time of {subject['Subject']}")
                                 answer = ""

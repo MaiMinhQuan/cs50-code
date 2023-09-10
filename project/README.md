@@ -9,7 +9,7 @@ The file "requirements.txt" contains the libraries that need to be installed.
 
 The file "test_project.py" contains test functions.
 
-The file "schedule.csv" contains information about the school's subjects, including ID, name, day, session (Morning, Afternoon, Evening) of the subject (Note: students can only study one subject at a time). session).
+The file "schedule.csv" contains information about the school's subjects, including ID, name, day, session (Morning, Afternoon, Evening) of the subject (Note: students can only study one subject in a session).
 
 In the file called "project.py", the program that expects exactly one command-line argument, the name (or path) of a CSV file that contains ID, name, date, session of subjects. If user enters too many arguments, "Too many command-line arguments" will appear. If user enters too few arguments, "Too few command-line arguments" will appear. If argument
 is not a csv file, "Not a CSV file" will appear. If it is a csv file that does not exist, "File does not exist" will appear.

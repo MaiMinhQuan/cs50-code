@@ -1,5 +1,5 @@
 # Timetable making
-#### Video Demo :  <https://youtu.be/I-6RmGHsOsk>
+#### Video Demo :  <https://www.youtube.com/watch?v=I-6RmGHsOsk>
 #### Description:
 My program helps students create their own schedules, making studying easier for them.
 

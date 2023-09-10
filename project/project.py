@@ -23,7 +23,7 @@ def main():
                 subjects.append(subject)
                 valid_IDs.append(int(subject["ID"]))
     except:
-        sys.exit("File does not exit")
+        sys.exit("File does not exist")
 
 
 

@@ -1,4 +1,4 @@
-from project.project import check_name, day_convert, time_convert
+from project import check_name, day_convert, time_convert
 
 def test_check_name():
     assert check_name("a") == True

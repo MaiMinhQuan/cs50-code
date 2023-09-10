@@ -12,9 +12,9 @@ The file "test_project.py" contains test functions.
 The file "schedule.csv" contains information about the school's subjects, including ID, name, day, session (Morning, Afternoon, Evening) of the subject (Note: students can only study one subject at a time). session).
 
 In the file called "project.py", the program that expects exactly one command-line argument, the name (or path) of a CSV file that contains ID, name, date, session of subjects. If user enters too many arguments, "Too many command-line arguments" will appear. If user enters too few arguments, "Too few command-line arguments" will appear. If argument
-is not a csv file, "Not CSV File" will appear. If it is a csv file that does not exist, "File does not exist" will appear.
+is not a csv file, "Not a CSV file" will appear. If it is a csv file that does not exist, "File does not exist" will appear.
 
-Next, the user needs to enter their real name (not a nickname). If the user enters an invalid name, the user will have to re-enter the name..
+Next, user needs to enter their real name (not a nickname). If user enters an invalid name, user will have to re-enter the name.
 
 Then, users need to enter the ID of the subjects they want to study.
 If the user enters the wrong ID they will have to re-enter it. If the user enters a subject that overlaps with another subject, the user will have to confirm whether the user continues to register for that subject or not. Answer "y" if you still want to register, answer "n" if you do not want to register. If the user's answer is different from "y" and "n", the user will have to answer again.

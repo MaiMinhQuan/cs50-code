@@ -21,7 +21,7 @@ def main():
             reader = csv.DictReader(f)
             for subject in reader:
                 subjects.append(subject)
-                valid_IDs.append(int(subject["ID"]))
+                valid_IDs.append(subject["ID"])
     except:
         sys.exit("File does not exist")
 
@@ -63,16 +63,11 @@ def main():
     while True:
         try:
             id = input("Subject 's ID: ")
-            try:
-                id = int(id)
-            except ValueError:
-                print("ID is invalid")
-                continue
             if id in valid_IDs:
                 if id not in selected_IDs:
                     selected_IDs.append(id)
                     for subject in subjects:
-                        if id == int(subject["ID"]):
+                        if id == subject["ID"]:
                             column = day_convert(subject["Day"])
                             row = time_convert(subject["Time"])
                             if timetable[row][column] != "":
@@ -86,7 +81,7 @@ def main():
                                 if answer == "y":
                                     for subject1 in subjects:
                                         if subject1["Subject"] == timetable[row][column]:
-                                            selected_IDs.remove(int(subject1["ID"]))
+                                            selected_IDs.remove(subject1["ID"])
                             timetable[row][column] = subject["Subject"]
             else:
                 print("ID is not valid")

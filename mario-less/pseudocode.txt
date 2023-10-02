@@ -1,0 +1,5 @@
+1.Get the height of the pyramid
+    1.If the height is invalid
+        1.Go back to line 1
+2.Iterate from zero to height minus 1
+    1.On iteration i, print height - 1 - i space and i + 1 hashes

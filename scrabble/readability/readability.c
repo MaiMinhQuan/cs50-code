@@ -1,7 +1,7 @@
 #include <cs50.h>
+#include <ctype.h>
 #include <stdio.h>
 #include <string.h>
-#include <ctype.h>
 
 int count_letters(string text);
 int count_words(string text);
@@ -20,7 +20,7 @@ int count_letters(string text)
 {
     int length = strlen(text);
     int cnt = 0;
-    for (int i = 0; i <length; i++)
+    for (int i = 0; i < length; i++)
     {
         if (isalpha(text[i]))
             cnt++;
@@ -37,7 +37,7 @@ int count_words(string text)
         if (text[i] == ' ')
             cnt++;
     }
-    return cnt+1;
+    return cnt + 1;
 }
 
 int count_sentences(string text)

@@ -23,7 +23,7 @@ int main(void)
     else if (result < 1)
         printf("Before Grade 1\n");
     else
-        printf("Grade %f\n", round(result));
+        printf("Grade %.0f\n", round(result));
     return 0;
 }
 

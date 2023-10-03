@@ -5,6 +5,7 @@
 const int BITS_IN_BYTE = 8;
 
 void print_bulb(int bit);
+string bi_convert(char c);
 
 int main(void)
 {
@@ -23,4 +24,10 @@ void print_bulb(int bit)
         // Light emoji
         printf("\U0001F7E1");
     }
+}
+
+string bi_convert(char c)
+{
+    int a = c;
+    
 }

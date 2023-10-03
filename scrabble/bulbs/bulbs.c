@@ -19,7 +19,7 @@ int main(void)
             c[j] = v % 2;
             v /= 2;
         }
-        for (int j = BITS_IN_BYTE - 1; j >= 0; j++)
+        for (int j = BITS_IN_BYTE - 1; j >= 0; j--)
         {
             print_bulb(c[j]);
         }

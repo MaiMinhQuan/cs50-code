@@ -14,17 +14,16 @@ int main(void)
     int letters = count_letters(input);
     int words = count_words(input);
     int sentences = count_sentences(input);
-    printf("%i %i %i\n", letters, words, sentences);
-    float lw = letters / words * 100.0;
-    float sw = sentences / words * 100.0;
+    // printf("%i %i %i\n", letters, words, sentences);
+    float lw = (float) letters / words * 100;
+    float sw = (float) sentences / words * 100;
     float result = 0.0588 * lw - 0.296 * sw - 15.8;
-    int grade = round(result);
     if (result >= 16)
         printf("Grade 16+\n");
     else if (result < 1)
         printf("Before Grade 1\n");
     else
-        printf("Grade %f\n", result);
+        printf("Grade %i\n", round(result));
     return 0;
 }
 

@@ -10,7 +10,12 @@ int count_sentences(string text);
 int main(void)
 {
     string input = get_string("Text: ");
-    ?
+    int letters = count_letters(input);
+    int words = count_words(input);
+    int sentences = count_sentences(input);
+    float lw = letters / words * 100.0;
+    float sw = sentences / words * 100.0;
+    
     return 0;
 }
 

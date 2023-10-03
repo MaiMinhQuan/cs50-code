@@ -2,6 +2,7 @@
 #include <ctype.h>
 #include <stdio.h>
 #include <string.h>
+#include <math.h>
 
 int count_letters(string text);
 int count_words(string text);
@@ -15,7 +16,14 @@ int main(void)
     int sentences = count_sentences(input);
     float lw = letters / words * 100.0;
     float sw = sentences / words * 100.0;
-    
+    float result = 0.0588 * lw - 0.296 * sw - 15.8;
+    int grade = round(result);
+    if (grade >= 16)
+        printf("Grade 16+\n");
+    else if (grade < 1)
+        printf("Before Grade 1\n");
+    else
+        printf("Grade %i\n", grade);
     return 0;
 }
 

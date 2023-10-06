@@ -1,6 +1,8 @@
 sort1 uses: Bubble Sort
 
-How do you know?: TODO
+How do you know?:
+
+re
 
 sort2 uses: TODO
 

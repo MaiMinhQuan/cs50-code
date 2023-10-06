@@ -3,7 +3,7 @@
 #include<string.h>
 #include<cs50.h>
 
-int atoi(char c[]);
+int atoi(string c);
 
 int main()
 {

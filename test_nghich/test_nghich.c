@@ -1,17 +1,17 @@
 #include<stdio.h>
 #include<math.h>
 #include<string.h>
+#include<cs50.h>
 
 int atoi(char c[]);
 
 int main()
 {
-	char c[100];
-	gets(c);
+	string c = get_string("Nhap vao xau: ");
 	printf("%d", atoi(c));
 }
 
-int atoi(char c[])
+int atoi(string c)
 {
 	int len = strlen(c);
 	int tmp = c[len - 1] - '0';

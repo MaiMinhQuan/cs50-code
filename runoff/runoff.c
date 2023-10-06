@@ -133,7 +133,7 @@ bool vote(int voter, int rank, string name)
     {
         if (strcmp(candidates[i].name, name) == 0)
         {
-            perferences[voter][rank] = i;
+            preferences[voter][rank] = i;
             return true;
         }
     }
@@ -149,9 +149,9 @@ void tabulate(void)
         for (int cand = 0; cand < candidate_count; cand++)
         {
             int pre = preferences[voter][cand];
-            if (candidates[pre].eleminated == false)
+            if (candidates[pre].eliminated == false)
             {
-                candidates[pre].vote++;
+                candidates[pre].votes++;
                 break;
             }
         }
@@ -182,7 +182,7 @@ int find_min(void)
     int min = 100;
     for (int i = 0; i <candidate_count; i++)
     {
-        if (!candidates[i].eleminated)
+        if (!candidates[i].eliminated)
         {
             if (candidates[i].vote <min)
             {
@@ -200,7 +200,7 @@ bool is_tie(int min)
     // TODO
     for (int i = 0; i < candidate_count; i++)
     {
-        if (!candidates[i].eleminated)
+        if (!candidates[i].eliminated)
         {
             if (candidates[i].votes != min)
             {
@@ -219,7 +219,7 @@ void eliminate(int min)
     {
         if (candidate[i].votes == min)
         {
-            candidates[i].eleminated = true;
+            candidates[i].eliminated = true;
         }
     }
     return;

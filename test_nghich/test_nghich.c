@@ -15,7 +15,7 @@ int atoi(string c)
 {
 	int len = strlen(c);
 	int tmp = c[len - 1] - '0';
-	if (len == 0)
+	if (len == 1)
 		return tmp;
 	else
 	{

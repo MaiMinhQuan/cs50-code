@@ -15,8 +15,7 @@ typedef struct
     string name;
     int votes;
     bool eliminated;
-}
-candidate;
+} candidate;
 
 // Array of candidates
 candidate candidates[MAX_CANDIDATES];
@@ -180,15 +179,14 @@ int find_min(void)
 {
     // TODO
     int min = 100;
-    for (int i = 0; i <candidate_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
         if (!candidates[i].eliminated)
         {
-            if (candidates[i].votes <min)
+            if (candidates[i].votes < min)
             {
                 min = candidates[i].votes;
             }
-
         }
     }
     return min;

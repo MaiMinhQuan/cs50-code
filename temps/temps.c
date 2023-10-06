@@ -65,16 +65,16 @@ void sort_cities(void)
     for (int i = NUM_CITIES - 1; i >=0; i--)
     {
         for (int j = 0; j < i; j++)
-        {   bool sorted = TRUE;
+        // {   int sorted = 1;
             if (temps[j].temp > temps[j + 1].temp)
             {
-                avg_temps tmp = temps[j];
+                avg_temp tmp = temps[j];
                 temps[j] = temps[j + 1];
                 temps[j + 1] = tmp;
-                sorted = FALSE;
+                // sorted = 0;
             }
-            if (sorted == TRUE)
-                return;
+            // if (sorted == 1)
+            //     return;
         }
     }
 }

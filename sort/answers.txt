@@ -2,12 +2,28 @@ sort1 uses: Bubble Sort
 
 How do you know?:
 
-re
+random50000: 5.847s
+reversed50000: 5.403s
+sorted50000: 0.697s
 
-sort2 uses: TODO
+If txt file is a sorted file, sort1 is pretty fast. But if is not, sort1 is slow.
 
-How do you know?: TODO
+sort2 uses: Merge Sort
 
-sort3 uses: TODO
+How do you know?:
 
-How do you know?: TODO
+random50000: 0.520s
+reversed50000: 0.561s
+sorted50000: 0.410s
+
+Sort2 is always faster than than the other sorting programes.
+
+sort3 uses: Selection Sort
+
+How do you know?:
+
+random50000: 2.349s
+reversed50000: 2.601s
+sorted50000: 2.470s
+
+If txt file is a sorted file, sort3 is still slow. Moreover, the running time of all txt file is roughly the same.

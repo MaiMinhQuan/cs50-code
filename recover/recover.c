@@ -1,9 +1,9 @@
+#include <stdbool.h>
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdint.h>
-#include <stdbool.h>
 
- #define BLOCK_SIZE 512
+#define BLOCK_SIZE 512
 int main(int argc, char *argv[])
 {
     if (argc != 2)
@@ -14,21 +14,21 @@ int main(int argc, char *argv[])
 
     char *file = argv[1];
     FILE *raw_file = fopen(file, "r");
-    if (raw_file ==NULL)
+    if (raw_file == NULL)
     {
         printf("COuld not open %s", file);
         return 1;
     }
 
     bool found_jpg = false;
-    int ipg_count = 0;
+    int jpg_count = 0;
     uint8_t buffer[BLOCK_SIZE];
     char jpg_name[8];
     FILE *outptr = NULL;
 
     while (fread(buffer, BLOCK_SIZE, 1, raw_file) == 1)
     {
-        if (biffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
+        if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
             if (found_jpg)
             {
@@ -39,22 +39,28 @@ int main(int argc, char *argv[])
                 found_jpg = true;
             }
 
-        sprintf(jpg_name, "%03i.jpg", jpg_count);
+            sprintf(jpg_name, "%03i.jpg", jpg_count);
 
-        outptr = fopen(jpg_name, "w");
-        if (outptr == NULL)
-        {
-            fclose(raw_file);
-            printf("Could not create %s.\n", jpg_name);
-            return 3;
+            outptr = fopen(jpg_name, "w");
+            if (outptr == NULL)
+            {
+                fclose(raw_file);
+                printf("Could not create %s.\n", jpg_name);
+                return 3;
+            }
+            jpg_count++;
         }
-        jpg_count++;
-
+        if (found_jpg)
+        {
+            fwrite(buffer, BLOCK_SIZE, 1, outptr);
         }
     }
 
+    fclose(raw_file);
     if (found_jpg)
     {
-        
+        fclose(outptr);
     }
+
+    return 0;
 }

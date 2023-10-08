@@ -51,7 +51,6 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
             image[i][width - 1 - j] = tmp;
         }
     }
-    return;
 }
 
 // Blur image

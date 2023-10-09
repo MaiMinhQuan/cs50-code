@@ -16,15 +16,15 @@ int main(int argc, char *argv[])
     FILE *raw_file = fopen(file, "r");
     if (raw_file == NULL)
     {
-        printf("COuld not open %s", file);
+        printf("Could not open %s", file);
         return 1;
     }
 
     bool found_jpg = false;
     int jpg_count = 0;
     uint8_t buffer[BLOCK_SIZE];
-    char jpg_name[8];outptr = NU
-    FILE *LL;
+    char jpg_name[8];
+    FILE *outptr = NULL;
 
     while (fread(buffer, BLOCK_SIZE, 1, raw_file) == 1)
     {

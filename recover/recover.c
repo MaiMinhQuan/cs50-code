@@ -23,8 +23,8 @@ int main(int argc, char *argv[])
     bool found_jpg = false;
     int jpg_count = 0;
     uint8_t buffer[BLOCK_SIZE];
-    char jpg_name[8];
-    FILE *outptr = NULL;
+    char jpg_name[8];outptr = NU
+    FILE *LL;
 
     while (fread(buffer, BLOCK_SIZE, 1, raw_file) == 1)
     {

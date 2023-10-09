@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
     FILE *raw_file = fopen(file, "r");
     if (raw_file == NULL)
     {
-        //printf("Could not open %s", file);
+        // printf("Could not open %s", file);
         return 1;
     }
 
@@ -45,9 +45,10 @@ int main(int argc, char *argv[])
             if (outptr == NULL)
             {
                 fclose(raw_file);
-                //printf("Could not create %s.\n", jpg_name);
+                // printf("Could not create %s.\n", jpg_name);
                 return 3;
             }
+
             jpg_count++;
         }
         if (found_jpg)
@@ -57,6 +58,7 @@ int main(int argc, char *argv[])
     }
 
     fclose(raw_file);
+
     if (found_jpg)
     {
         fclose(outptr);

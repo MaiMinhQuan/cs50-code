@@ -119,10 +119,7 @@ bool check(char* word)
         else
             return false;
     }
-    if (tmp->is_word)
-        return true;
-
-    return false;
+    return tmp->is_word;
 
 }
 

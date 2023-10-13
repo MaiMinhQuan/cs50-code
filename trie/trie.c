@@ -113,13 +113,16 @@ bool check(char* word)
     node *tmp = root;
     for (i = 0, n = strlen(word); i < n; i++)
     {
-        node *track = tmp;
         int index = tolower(name[i]) - 'a';
         if (tmp->children[index] != NULL)
             tmp = tmp->children[j];
-        if (tmp == track)
-            return false;
+        else
+            return false
     }
+    if (tmp->is_word)
+        return true;
+
+    return false;
 
 }
 

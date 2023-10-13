@@ -113,13 +113,14 @@ bool check(char* word)
     node *tmp = root;
     for (i = 0, n = strlen(word); i < n; i++)
     {
-        int value = 
-        for (j = 0; j < SIZE_OF_ALPHABET; j++)
-        {
-
-        }
+        node *track = tmp;
+        int index = tolower(name[i]) - 'a';
+        if (tmp->children[index] != NULL)
+            tmp = tmp->children[j];
+        if (tmp == track)
+            return false;
     }
-    return false;
+
 }
 
 // Unload trie from memory

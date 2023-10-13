@@ -111,13 +111,13 @@ int main(int argc, char *argv[])
 bool check(char* word)
 {
     node *tmp = root;
-    for (i = 0, n = strlen(word); i < n; i++)
+    for (int i = 0, n = strlen(word); i < n; i++)
     {
         int index = tolower(name[i]) - 'a';
         if (tmp->children[index] != NULL)
-            tmp = tmp->children[j];
+            tmp = tmp->children[index];
         else
-            return false
+            return false;
     }
     if (tmp->is_word)
         return true;

@@ -73,7 +73,7 @@ bool load(const char *dictionary)
         }
 
         strcpy(tmp->word, word);
-        hashValue = hash(word);
+        int hashValue = hash(word);
         tmp->next = table[hashValue];
         table[hashValue] = tmp;
         wordCount++;

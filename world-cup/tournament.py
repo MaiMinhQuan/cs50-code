@@ -5,7 +5,7 @@ import sys
 import random
 import time
 # Number of simluations to run
-N = 10
+N = 1000000
 
 
 def main():
@@ -33,7 +33,7 @@ def main():
         print(f"{team}: {counts[team] * 100 / N:.1f}% chance of winning")
 
     end = time.time() - start
-    print(end)
+    print(f"{end: .3f} s")
 
 def simulate_game(team1, team2):
     """Simulate a game. Return True if team1 wins, False otherwise."""

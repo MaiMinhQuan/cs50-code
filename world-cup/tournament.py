@@ -3,9 +3,9 @@
 import csv
 import sys
 import random
-
+import time
 # Number of simluations to run
-N = 1000
+N = [10, 100, 1000, 10000, 100000, 1000000]
 
 
 def main():
@@ -19,17 +19,24 @@ def main():
         reader = csv.DictReader(f)
         for d in reader:
             teams.append({"team": d["team"], "rating": int(d["rating"])})
-    counts = {}
-    # TODO: Simulate N tournaments and keep track of win counts
-    for i in range(N):
-        ct = simulate_tournament(teams)
-        if ct in counts:
-            counts[ct] += 1
-        else:
-            counts[ct] = 1
-    # Print each team's chances of winning, according to simulation
-    for team in sorted(counts, key=lambda team: counts[team], reverse=True):
-        print(f"{team}: {counts[team] * 100 / N:.1f}% chance of winning")
+
+    for n in N:
+        startTime = time.time()
+        counts = {}
+        # TODO: Simulate N tournaments and keep track of win counts
+        for i in range(N):
+            ct = simulate_tournament(teams)
+            if ct in counts:
+                counts[ct] += 1
+            else:
+                counts[ct] = 1
+        endTime = time.time() - startTime
+        # Print each team's chances of winning, according to simulation
+        for team in sorted(counts, key=lambda team: counts[team], reverse=True):
+            print(f"{team}: {counts[team] * 100 / N:.1f}% chance of winning")
+
+        
+
 
 
 def simulate_game(team1, team2):

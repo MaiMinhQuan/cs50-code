@@ -9,14 +9,14 @@ while True:
         continue
 
 n = int(n * 100)
-print(n)
-quarter = n / 25
-print(quarter)
-n -= 25 * quarter
-dime = n / 10
-n -= 10 * dime
-nickel = n / 5
-n -= 5 * nickel
+#print(n)
+quarter = int(n / 25)
+#print(quarter)
+n %= 25
+dime = int(n / 10)
+n %= 10
+nickel = int(n / 5)
+n %= 5
 
-#print(quarter + dime + nickel + n)
+print(quarter + dime + nickel + n)
 

@@ -1,8 +1,10 @@
-def cnt_letters(s):
-    cnt = 0
+def cnt(s):
+    letters = 0
+    words = 0
+    sentences = 0
     for c in s:
         if c.isalpha():
-            cnt++
+            letters++
+        if c == " ":
+            sentences++
 
-def cnt_words(s):
-    

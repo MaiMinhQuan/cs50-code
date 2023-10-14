@@ -2,7 +2,7 @@
 
 #include <ctype.h>
 #include <stdbool.h>
-
+#include <string.h>
 #include "dictionary.h"
 
 // Represents a node in a hash table
@@ -23,6 +23,13 @@ node *table[N];
 bool check(const char *word)
 {
     // TODO
+    int hashValue = hash(word);
+    node *cursor = table[hashValue];
+
+    while (cursor != NULL)
+    {
+        if (str)
+    }
     return false;
 }
 

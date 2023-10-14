@@ -2,6 +2,7 @@
 
 #include <ctype.h>
 #include <stdbool.h>
+#include <strings.h>
 #include <string.h>
 #include "dictionary.h"
 
@@ -28,7 +29,11 @@ bool check(const char *word)
 
     while (cursor != NULL)
     {
-        if (strcasecmp(word, cursor->))
+        if (strcasecmp(word, cursor->word) == 0)
+        {
+            return true;
+        }
+        cursor = cursor->next;
     }
     return false;
 }
@@ -37,6 +42,11 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
+    int total = 0;
+    for (int i = 0; i < strlen(word); i++)
+    {
+        total += tolwer(word[i]);
+    }
     return toupper(word[0]) - 'A';
 }
 

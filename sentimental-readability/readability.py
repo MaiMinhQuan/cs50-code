@@ -23,7 +23,7 @@ def main():
     elif result < 1:
         print("Before Grade 1")
     else:
-        print(f"Grade {int(result)}")
+        print(f"Grade {int(result + 0.5)}")
 
 main()
 

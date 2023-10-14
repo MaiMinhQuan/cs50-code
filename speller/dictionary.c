@@ -5,7 +5,7 @@
 #include <strings.h>
 #include <string.h>
 #include <stdlib.h>
-
+#include <stdio.h>
 #include "dictionary.h"
 
 // Represents a node in a hash table
@@ -21,12 +21,14 @@ const unsigned int N = 26;
 
 // Hash table
 node *table[N];
+int wordCount = 0;
+int hashValue;
 
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
     // TODO
-    int hashValue = hash(word);
+    hashValue = hash(word);
     node *cursor = table[hashValue];
 
     while (cursor != NULL)
@@ -66,6 +68,16 @@ bool load(const char *dictionary)
     {
         node *n = malloc(sizeof(node));
     }
+    if (n == NULL)
+    {
+        return FALSE;
+    }
+
+    strcpy(n->word, word);
+    hashValue = hash(word);
+    n->next = table[hashValue];
+    table[hashValue] = n;
+    wordCount++;
     return false;
 }
 

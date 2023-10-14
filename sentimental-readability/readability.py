@@ -12,6 +12,7 @@ def cnt(s):
 
     return letters, words + 1, sentences
 
+
 def main():
     s = input("Text: ")
     l, w, s = cnt(s)
@@ -25,7 +26,5 @@ def main():
     else:
         print(f"Grade {int(result + 0.5)}")
 
+
 main()
-
-
-

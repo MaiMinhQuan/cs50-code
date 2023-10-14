@@ -21,6 +21,7 @@ def main():
             teams.append({"team": d["team"], "rating": int(d["rating"])})
     counts = {}
     # TODO: Simulate N tournaments and keep track of win counts
+    start = time.time();
     for i in range(N):
         ct = simulate_tournament(teams)
         if ct in counts:
@@ -30,7 +31,7 @@ def main():
     # Print each team's chances of winning, according to simulation
     for team in sorted(counts, key=lambda team: counts[team], reverse=True):
         print(f"{team}: {counts[team] * 100 / N:.1f}% chance of winning")
-
+    
 
 def simulate_game(team1, team2):
     """Simulate a game. Return True if team1 wins, False otherwise."""

@@ -22,13 +22,12 @@ const unsigned int N = 26;
 // Hash table
 node *table[N];
 int wordCount = 0;
-int hashValue;
 
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
     // TODO
-    hashValue = hash(word);
+    int hashValue = hash(word);
     node *cursor = table[hashValue];
 
     while (cursor != NULL)
@@ -59,24 +58,24 @@ bool load(const char *dictionary)
 {
     // TODO
     FILE *dict = fopen(dictionary, "r");
-    if (file == NULL)
+    if (dict == NULL)
     {
         return false;
     }
     char word[LENGTH + 1];
     while (fscanf(dict, "%s", word) != EOF)
     {
-        node *n = malloc(sizeof(node));
+        node *tmp = malloc(sizeof(node));
 
-        if (n == NULL)
+        if (tmp == NULL)
         {
             return false;
         }
 
-        strcpy(n->word, word);
+        strcpy(tmp->word, word);
         hashValue = hash(word);
-        n->next = table[hashValue];
-        table[hashValue] = n;
+        tmp->next = table[hashValue];
+        table[hashValue] = tmp;
         wordCount++;
     }
     fclose(dict);
@@ -87,6 +86,10 @@ bool load(const char *dictionary)
 unsigned int size(void)
 {
     // TODO
+    if (wordCount > 0)
+    {
+        return wordCount;
+    }
     return 0;
 }
 
@@ -94,5 +97,6 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
+
     return false;
 }

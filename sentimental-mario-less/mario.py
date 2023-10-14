@@ -8,5 +8,5 @@ while True:
         continue
 
 for i in range(n):
-    print(" " * (n - 1 - i), end = "")
-    print("#"* (i + 1))
+    print(" " * (n - 1 - i), end="")
+    print("#" * (i + 1))

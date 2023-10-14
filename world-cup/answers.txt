@@ -10,7 +10,11 @@ Times:
 Questions:
 
 Which predictions, if any, proved incorrect as you increased the number of simulations?:
+
 I think that when we increase the number of simulations, the results will be more accurate, because when i try to simulate 10 times, the winner is USA, 100 times, the winner is England, 1000 times or more the winner is always Germany.
+
 Suppose you're charged a fee for each second of compute time your program uses.
+
 After how many simulations would you call the predictions "good enough"?:
+
 It is likely that the results stay the same after 10000 times of simulations.

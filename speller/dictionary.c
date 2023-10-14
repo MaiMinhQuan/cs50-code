@@ -4,6 +4,8 @@
 #include <stdbool.h>
 #include <strings.h>
 #include <string.h>
+#include <stdlib.h>
+
 #include "dictionary.h"
 
 // Represents a node in a hash table
@@ -45,15 +47,25 @@ unsigned int hash(const char *word)
     int total = 0;
     for (int i = 0; i < strlen(word); i++)
     {
-        total += tolwer(word[i]);
+        total += tolower(word[i]);
     }
-    return toupper(word[0]) - 'A';
+    return total % N;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
 {
     // TODO
+    FILE *dict = fopen(dictionary, "r");
+    if (file == NULL)
+    {
+        return false;
+    }
+    char word[LENGTH + 1];
+    while (fscanf(dict, "%s", word) != EOF)
+    {
+        node *n = malloc(sizeof(node));
+    }
     return false;
 }
 

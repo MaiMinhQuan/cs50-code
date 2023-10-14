@@ -1,9 +1,11 @@
-try:
-    n = float(input("Change owed: "))
-    if n < 0:
+while True:
+    try:
+        n = float(input("Change owed: "))
+        if n < 0:
+            continue
+        break
+    except:
         continue
-    break
-except:
-    continue
 
 n = int(n * 100)
+print(n)

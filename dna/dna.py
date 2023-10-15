@@ -31,12 +31,12 @@ def main():
         for key in row.keys():
             if key == "name":
                 continue
-            if int(row[key]) != strs[key]"
+            if int(row[key]) != strs[key]:
                 oke = False
                 break
-            if oke:
-                print(row["name"])
-                return
+        if oke:
+            print(row["name"])
+            return
     print("No match")
     return
 

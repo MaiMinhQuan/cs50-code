@@ -20,13 +20,16 @@ def main():
 
     # TODO: Find longest match of each STR in DNA sequence
     strs = {}
-    for key in reader1.keys():
+    for key in f1[0].keys():
         if key == "name":
             continue
         strs[key] = longest_match(sequence, key)
 
     # TODO: Check database for matching profiles
-    
+    for row in reader1:
+        oke = True
+        for key in row.keys():
+
     return
 
 

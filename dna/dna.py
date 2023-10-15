@@ -20,7 +20,7 @@ def main():
 
     # TODO: Find longest match of each STR in DNA sequence
     strs = {}
-    for key in f1[0].keys():
+    for key in people[0].keys():
         if key == "name":
             continue
         strs[key] = longest_match(sequence, key)
@@ -28,10 +28,10 @@ def main():
     # TODO: Check database for matching profiles
     for row in reader1:
         oke = True
-        for key in row.keys():
+        for key in ro.keyws():
             if key == "name":
                 continue
-            if int(row[key]) != str_counts[key]"
+            if int(row[key]) != strs[key]"
                 oke = False
                 break
             if oke:

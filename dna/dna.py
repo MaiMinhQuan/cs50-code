@@ -17,10 +17,16 @@ def main():
     # TODO: Read DNA sequence file into a variable
     with open(sys.argv[2]) as f2:
         sequence = f2.read()
+
     # TODO: Find longest match of each STR in DNA sequence
+    strs = {}
+    for key in reader1.keys():
+        if key == "name":
+            continue
+        strs[key] = longest_match(sequence, key)
 
     # TODO: Check database for matching profiles
-
+    
     return
 
 

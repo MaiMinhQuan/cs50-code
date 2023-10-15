@@ -26,9 +26,9 @@ def main():
         strs[key] = longest_match(sequence, key)
 
     # TODO: Check database for matching profiles
-    for row in reader1:
+    for row in people:
         oke = True
-        for key in ro.keyws():
+        for key in row.keys():
             if key == "name":
                 continue
             if int(row[key]) != strs[key]"

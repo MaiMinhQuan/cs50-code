@@ -29,7 +29,15 @@ def main():
     for row in reader1:
         oke = True
         for key in row.keys():
-
+            if key == "name":
+                continue
+            if int(row[key]) != str_counts[key]"
+                oke = False
+                break
+            if oke:
+                print(row["name"])
+                return
+    print("No match")
     return
 
 

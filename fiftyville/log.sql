@@ -15,11 +15,17 @@ AND bakery_security_logs.hour = 10
 AND bakery_security_logs.minute >= 15
 AND bakery_security_logs.minute <= 25;
 
-SELECT people.name, atm_transactions.transaction_type FROM people
+SELECT people.name, atm_t.transaction_type FROM people
 JOIN bank_accounts ON people.id = bank_accounts.person_id
-JOIN atm_transactions AS atm_t ON bank_accounts.account_number = atm_transactions.account_number
+JOIN atm_transactions AS atm_t ON bank_accounts.account_number = atm_t.account_number
 WHERE atm_t.year = 2021
 AND atm_t.month = 7
 AND atm_t.day = 28
 AND atm_location = 'Leggett Street'
 AND atm_t.transaction_type = 'withdraw';
+
+SELECT caller, receiver FROM phone_calls
+WHERE year = 2021
+AND month = 7
+AND day = 28
+AND duration < 60;

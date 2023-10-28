@@ -19,4 +19,4 @@ CREATE TABLE relationship
     student_name TEXT,
     house TEXT,
     PRIMARY KEY(id)
-);
+)

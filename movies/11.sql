@@ -7,4 +7,4 @@ WHERE stars.person_id =
     WHERE name = 'Chadwick Boseman'
 )
 ORDER BY ratings DSC
-LIMIT 5
+LIMIT 5;

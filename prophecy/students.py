@@ -1,7 +1,7 @@
 import csv
 from cs50 import SQL
 
-def creat_house(house, houses, head):
+def create_house(house, houses, head):
     count = 0
     for h in houses:
         if h["house"] == house :
@@ -9,7 +9,7 @@ def creat_house(house, houses, head):
     if count == 0:
         houses.append({"house": house, "head": head})
 
-def creat_student(name, students):
+def create_student(name, students):
     students.append({"student_name": name})
 
 def create_relationship(name, house, relationships):

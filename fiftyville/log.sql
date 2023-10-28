@@ -69,3 +69,20 @@ JOIN flights ON flights.id = passengers.flight_id
 JOIN airports ON airports.id = flights.destination_airport_id
 WHERE flights.id = 36
 ORDER BY flights.hour ASC;
+
+SELECT name from people
+JOIN passengers ON people.passport_number = passengers.passport_number
+JOIN flights ON flights.id = passengers.flight_id
+WHERE (flights.year = 2021 AND flights.month = 7 AND flights.day = 28 AND flights.id = 36)
+AND name IN
+(
+    SELECT phone_calls.caller_name FROM phone_calls
+    WHERE year = 2021
+    AND month = 7
+    AND day = 28
+    AND duration < 60
+)
+AND name IN
+(
+    SELECT people.name FROM people
+)

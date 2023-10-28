@@ -1,2 +1,5 @@
 How to characterize audio aura?
-If the 
+If the average of energy, valence, and danceability is high, then their audio aura is extroverted, likes to listen to exciting music.
+if the average of energy, valence, and dancebility is low, then their audio aura is introverted, and likes to listen to soft music.
+To improve?
+The better way is to caculate the average of all the feature of 100 songs mosted played.

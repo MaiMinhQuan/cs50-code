@@ -86,12 +86,12 @@ AND name IN
 (
     SELECT people.name FROM people
     JOIN bank_accounts ON people.id = bank_accounts.person_id
-    JOIN atm_transactions AS atm_t ON bank_accounts.account_number = atm_t.account_number
-    WHERE atm_t.year = 2021
-    AND atm_t.month = 7
-    AND atm_t.day = 28
-    AND atm_t.atm_location = 'Leggett Street'
-    AND atm_t.transaction_type = 'withdraw'
+    JOIN atm_transactions ON bank_accounts.account_number = atm_transactions.account_number
+    WHERE atm_transactions.year = 2021
+    AND atm_transactions.month = 7
+    AND atm_transactions.day = 28
+    AND atm_transactions.atm_location = 'Leggett Street'
+    AND atm_transactions.transaction_type = 'withdraw'
 )
 AND name IN
 (

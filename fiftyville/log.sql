@@ -21,7 +21,7 @@ JOIN atm_transactions AS atm_t ON bank_accounts.account_number = atm_t.account_n
 WHERE atm_t.year = 2021
 AND atm_t.month = 7
 AND atm_t.day = 28
-AND atm_location = 'Leggett Street'
+AND atm_t.atm_location = 'Leggett Street'
 AND atm_t.transaction_type = 'withdraw';
 
 ALTER TABLE phone_calls
@@ -90,7 +90,7 @@ AND name IN
     WHERE atm_t.year = 2021
     AND atm_t.month = 7
     AND atm_t.day = 28
-    AND atm_location = 'Leggett Street'
+    AND atm_t.atm_location = 'Leggett Street'
     AND atm_t.transaction_type = 'withdraw'
 )
 AND name IN

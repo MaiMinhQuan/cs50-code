@@ -11,8 +11,8 @@ def creat_house(house, houses, head):
 def creat_student(name, students):
     students.append({"student_name": name})
 
-def create_relationship(name, house, relationship):
-    
+def create_relationship(name, house, relationships):
+    relationships.append({"student_name": name, "house": house})
 students = []
 houses = []
 relationships = []
@@ -27,3 +27,4 @@ with open("students.csv", "r") as csvfile:
 
         create_house(house, houses, head)
         create_student(name, students)
+        creat_relationship(name, house, relationships)

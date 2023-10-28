@@ -1,4 +1,5 @@
 import csv
+from cs50 import SQL
 
 def creat_house(house, houses, head):
     count = 0
@@ -13,6 +14,9 @@ def creat_student(name, students):
 
 def create_relationship(name, house, relationships):
     relationships.append({"student_name": name, "house": house})
+
+db = SQL("sqlite:///roster.db")
+
 students = []
 houses = []
 relationships = []
@@ -28,3 +32,12 @@ with open("students.csv", "r") as csvfile:
         create_house(house, houses, head)
         create_student(name, students)
         creat_relationship(name, house, relationships)
+
+for student in students:
+    db.execute("INSERT INTO new_students (student_name) VALUE ?", student["student_name"])
+
+for r in relationships:
+    db.execute("INSERT INTO relationship (student_name, house) VALUE (?, ?)", r["student_name"], r["house"])
+
+for house in houses:
+    db.execute("INSERT INTO houses (house, head) VALUE (?, ?)", house["house"], house["head"])

@@ -85,4 +85,22 @@ AND name IN
 AND name IN
 (
     SELECT people.name FROM people
+    JOIN bank_accounts ON people.id = bank_accounts.person_id
+    JOIN atm_transactions AS atm_t ON bank_accounts.account_number = atm_t.account_number
+    WHERE atm_t.year = 2021
+    AND atm_t.month = 7
+    AND atm_t.day = 28
+    AND atm_location = 'Leggett Street'
+    AND atm_t.transaction_type = 'withdraw'
 )
+AND name IN
+(
+    SELECT people.name FROM people
+    JOIN bakery_security_logs ON people.license_plate = bakery_security_logs.license_plate
+    WHERE bakery_security_logs.year = 2021
+    AND bakery_security_logs.month = 7
+    AND bakery_security_logs.day = 28
+    AND bakery_security_logs.hour = 10
+    AND bakery_security_logs.minute >= 15
+    AND bakery_security_logs.minute <= 25
+);

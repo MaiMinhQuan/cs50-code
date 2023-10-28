@@ -31,7 +31,7 @@ with open("students.csv", "r") as csvfile:
 
         create_house(house, houses, head)
         create_student(name, students)
-        creat_relationship(name, house, relationships)
+        create_relationship(name, house, relationships)
 
 for student in students:
     db.execute("INSERT INTO new_students (student_name) VALUE ?", student["student_name"])

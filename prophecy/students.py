@@ -12,7 +12,7 @@ def creat_house(house, houses):
     if count == 0:
         houses.append(house)
 
-with open("./students.csv", "r") as csvfile:
+with open("students.csv", "r") as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
         name = row["student_name"]

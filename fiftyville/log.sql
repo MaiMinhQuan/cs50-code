@@ -53,3 +53,13 @@ AND day = 29
 ORDER BY hour ASC
 LIMIT 1;
 
+UPDATE flights
+SET origin_airport_id = airports.city
+FROM airports
+WHERE  flights.origin_airport_id = airports.id;
+
+UPDATE flights
+SET destination_airport_id = airports.city
+FROM airports
+WHERE  flights.destination_airport_id = airports.id;
+

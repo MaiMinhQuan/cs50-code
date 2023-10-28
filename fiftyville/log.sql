@@ -63,8 +63,9 @@ SET destination_airport_id = airports.id
 FROM airports
 WHERE  flights.destination_airport_id = airports.id;
 
-SELECT flights.destination_airport_id, name, phone_number, license_plate FROM people
+SELECT airports.city, flights.destination_airport_id, name, phone_number, license_plate FROM people
 JOIN passengers ON people.passport_number = passengers.passport_number
 JOIN flights ON flights.id = passengers.flight_id
+JOIN airports ON airports.id = flights.destination_airport_id
 WHERE flights.id = 36
 ORDER BY flights.hour ASC;

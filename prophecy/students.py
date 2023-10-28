@@ -34,10 +34,10 @@ with open("students.csv", "r") as csvfile:
         create_relationship(name, house, relationships)
 
 for student in students:
-    db.execute("INSERT INTO new_students (student_name) VALUE ?", student["student_name"])
+    db.execute("INSERT INTO new_students (student_name) VALUES ?", student["student_name"])
 
 for r in relationships:
-    db.execute("INSERT INTO relationship (student_name, house) VALUE (?, ?)", r["student_name"], r["house"])
+    db.execute("INSERT INTO relationship (student_name, house) VALUES (?, ?)", r["student_name"], r["house"])
 
 for house in houses:
-    db.execute("INSERT INTO houses (house, head) VALUE (?, ?)", house["house"], house["head"])
+    db.execute("INSERT INTO houses (house, head) VALUES (?, ?)", house["house"], house["head"])

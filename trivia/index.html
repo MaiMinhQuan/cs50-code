@@ -12,6 +12,17 @@
     <body>
         <div class="header">
             <h1>Trivia!</h1>
+            <script>
+                //Code to check answer
+                document.addEventListener('DOMContentLoaded', function(){
+                    //when correct
+                    let correct = document.querySelector('.correct');
+                    correct.addEventListener('click', function(){
+                        correct.style.backgroundColor = "green";
+                    document.querySelector("#answer1").innerHTML = "Correct!";
+                    });
+                })
+            </script>
         </div>
 
         <div class="container">

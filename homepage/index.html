@@ -11,6 +11,25 @@
         <div class = "header">
             <h1>Hello, world!</h1>
             <script>
+                document.addEventListener("DOMContentLoad", function(){
+                    let name = document.querySelector(".name");
+                    name.addEventListener("click", function(){
+                        name.style.backGroundColor = "green";
+                        document.querySelector("#name").innerHTML = "Mai Minh Quan";
+                    });
+
+                    let age = document.querySelector(".age");
+                    age.addEventListener("click", function(){
+                        age.style.backgroundColor = "green";
+                        document.querySelector("#age").innerHTML = "19";
+                    });
+
+                    let country = document.querySelector(".country");
+                    country.addEventListener("click", function(){
+                        country.style.backgroundColor = "green";
+                        document.querySelector("#country").innerHTML = "Vietnam";
+                    });
+                });
             </script>
         </div>
         <div><img src = "moutain.jpg" width = "731"/></div>

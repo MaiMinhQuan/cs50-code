@@ -121,36 +121,27 @@ def quote():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """Register user"""
-    if request.method == "GET":
-        return render_template("register.html")
+    session.clear()
 
-    else:
-        username = request.form.get("username")
-        password = request.form.get("password")
-        confirmation = request.form.get("confirmation")
+    if request.method == "POST":
+        if not request.form.get("username"):
+            return apology("Must Provide Username", 400)
+        elif not request.form.get("password"):
+            return apology("Must Provide Password", 400)
+        elif not request.form.get("Confirmation"):
+            return apology("Must Confirm Password", 400)
+        elif request.form.get("password") != request.form.get("confirmation"):
+            return apology("Password Does Not Match", 400)
 
-        if not username:
-            return apology("Must Give Username")
+        rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
 
-        if not password:
-            return apology("Must Give Password")
+        if len(rows) != 0:
+            return apology("Username Already Exists", 400)
 
-        if not confirmation:
-            return apology("Must Give Confirmation")
+        db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", request.form.get("username"), request.form.get("password"))
 
-        if password != confirmation:
-            return apology("Password Does Not Match")
+        session["user_id"] = row[0]["id"]
 
-        hash = generate_password_hash(password)
-
-        try:
-            new_user = db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
-        except:
-            return apology("Username already exists")
-
-        session["user_id"] = new_user
-
-        return redirect("/")
 
 @app.route("/sell", methods=["GET", "POST"])
 @login_required

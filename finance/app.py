@@ -207,7 +207,7 @@ def sell():
 
         for stock in stocks:
             if stock["symbol"] == symbol:
-                if stock["total-shares"] < shares:
+                if stock["total_shares"] < shares:
                     return apology("Not enough shares")
                 else:
                     quote = lookup(symbol)
@@ -220,7 +220,11 @@ def sell():
 
                     db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (:user_id, :symbol, :shares, :price)",
                                 user_id = session["user_id"], symbol = symbol, shares = - shares, price = price)
+                    return redirect("/")
 
+        return apology("Symbol not found")
+    else:
+        return render_template("sell.html", stocks = stocks)
 
 
 

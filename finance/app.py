@@ -62,7 +62,19 @@ def index():
         return apology("user not found", 400)
     cash = rows[0]["cash"]
 
-    stocks = db.execute("SELECT symbol, SUM(shares) AS total_shares FROM")
+    stocks = db.execute("SELECT symbol, SUM(shares) as total_shares FROM transactions WHERE user_id = ? GROUP BY symbol HAVING total_shares > 0",
+                        user_id)
+
+    total_value = cash
+    for stock in stocks:
+        quote = lookup(stock["symbol"])
+        stock["name"] = quote["name"]
+        stock["price"] = quote["price"]
+        stock["value"] = stock["price"] * stock["total_shares"]
+        total_value += stock["value"]
+        grand_total += stock["value"]
+
+    return render_template("index.html", stocks = stocks, cash = cash, total_value = total_value, grand_total = grand_total)
 
 @app.route("/buy", methods=["GET", "POST"])
 @login_required

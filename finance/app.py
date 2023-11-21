@@ -66,7 +66,8 @@ def buy():
         db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (:user_id, :symbol, :shares, :price)",
                    user_id = session["user_id"], symbol = symbol, shares = shares, price = price)
 
-        flask(f"Bought {shares} shares of {symbol} for {usd}")
+        flask(f"Bought {shares} shares of {symbol} for {usd(total_cost)}!")
+        return redirect("/")
 
 
 @app.route("/history")

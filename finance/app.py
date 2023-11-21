@@ -42,7 +42,31 @@ def index():
 @login_required
 def buy():
     """Buy shares of stock"""
-    return apology("TODO")
+    if request.method == "POST":
+        symbol = request.form.get("symbol").upper()
+        shares = request.form.get("shares")
+        if not symbol:
+            return apology("Must provide symbol")
+        elif not shares or not shares.isdigit() or int(shares) <= 0:
+            return apology("Must provide a positive number of shares")
+
+        quote = lookup(symbol)
+        if quote is None:
+            return apology("Symbol not found")
+
+        price = quote["price"]
+        total_cost = int(shares) * price
+        cash = db.execute("SELECT cash FROM users WHERE id = :user_id", user_id = session["user_id"])[0]["cash"]
+
+        if cash < total_cost:
+            return apology("Not enough cash")
+
+        db.execute("UPDATE users SET cash = cash - :total_cost WHERE id = :user_id", total_cost = total_cost, user_id = session["user_id"])
+
+        db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (:user_id, :symbol, :shares, :price)",
+                   user_id = session["user_id"], symbol = symbol, shares = shares, price = price)
+
+        flask(f"Bought {shares} shares of {symbol} for {usd}")
 
 
 @app.route("/history")

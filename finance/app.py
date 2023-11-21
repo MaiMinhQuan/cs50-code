@@ -116,7 +116,7 @@ def quote():
         if stock == None:
             return apology("Symbol Does Not Exit")
 
-        return render_template("quote.html")
+        return render_template("quoted.html", name = stock["name"], price = stock["price"], symbol = stock["symbol"])
 
 @app.route("/register", methods=["GET", "POST"])
 def register():

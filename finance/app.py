@@ -82,7 +82,7 @@ def buy():
         db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (:user_id, :symbol, :shares, :price)",
                    user_id = session["user_id"], symbol = symbol, shares = shares, price = price)
 
-        
+
         return redirect("/")
     else:
         return render_template("buy.html")
@@ -193,7 +193,7 @@ def register():
 def sell():
     """Sell shares of stock"""
     stocks = db.execute("SELECT symbol, SUM(shares) as total_shares FROM transactions WHERE user_id = :user_id GROUP BY symbol HAVING total_shares > 0",
-                        user_id = session["id"])
+                        user_id = session["user_id"])
 
     if request.method == "POST":
         symbol = request.form.get("symbol").upper()

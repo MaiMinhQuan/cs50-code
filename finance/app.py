@@ -140,7 +140,14 @@ def register():
 
         db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", request.form.get("username"), request.form.get("password"))
 
+        rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+
         session["user_id"] = row[0]["id"]
+
+        return redirect("/")
+
+    else:
+        return render_template("register.html")
 
 
 @app.route("/sell", methods=["GET", "POST"])

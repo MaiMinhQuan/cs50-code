@@ -111,6 +111,10 @@ def quote():
         if not symbol:
             return apology("Must Give Symbol")
 
+        stock = lookup(symbol.upper())
+
+        if stock == None:
+            return apology("Symbol Does Not Exit")
 
 @app.route("/register", methods=["GET", "POST"])
 def register():

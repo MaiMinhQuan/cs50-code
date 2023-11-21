@@ -83,7 +83,33 @@ def index():
 @login_required
 def buy():
     """Buy shares of stock"""
-    
+    if request.method == "POST":
+        if not request.form.get("symbol"):
+            return apology("must provide symbol", 400)
+        if not request.form.get("shares"):
+            return apology("must provide number of shares", 400)
+
+        stock = lookup(request.form.get("symbol"))
+        if stock is None:
+            return apology("invalid symbol", 400)
+
+        try:
+            shares = int(request.form.get("shares"))
+            if shares < 1:
+                raise ValueError
+        except ValueError:
+            return apology("shares must be a positive integer", 400)
+
+        user_id = session["user_id"]
+        rows = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
+        if len(rows) != 1:
+            return apology("user not found", 400)
+        cash = rows[0]["cash"]
+
+        total_cost = stock["price"] * shares
+
+        if cash < total_cost
+
 
 
 @app.route("/history")

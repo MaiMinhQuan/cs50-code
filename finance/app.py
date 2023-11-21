@@ -68,6 +68,8 @@ def buy():
 
         flask(f"Bought {shares} shares of {symbol} for {usd(total_cost)}!")
         return redirect("/")
+    else:
+        return render_template("buy.html")
 
 
 @app.route("/history")

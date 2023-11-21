@@ -107,16 +107,10 @@ def quote():
         return render_template("quote.html")
     else:
         symbol = request.form.get("symbol")
-
-        if not symbol:
-            return apology("Must Give Symbol")
-
-        stock = lookup(symbol.upper())
-
-        if stock == None:
-            return apology("Symbol Does Not Exit")
-
-        return render_template("quoted.html", name = stock["name"], price = stock["price"], symbol = stock["symbol"])
+        quote = lookup(symbol)
+        if not quote:
+            return apology("Invalid Symbol", 400)
+        return render_template("quote.html", quote = quote)
 
 @app.route("/register", methods=["GET", "POST"])
 def register():

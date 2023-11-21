@@ -29,6 +29,12 @@
                     </thead>
                     <tbody>
                         <!-- TODO: Loop through the database entries to display them in this table -->
+                        {% for cn in mn %}
+                            <tr>
+                                <td>{{ cn.name }}</td>
+                                <td>{{ cn.month }} / {{ cn.day }}</td>
+                            </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>

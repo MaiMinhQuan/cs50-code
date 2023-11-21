@@ -1,4 +1,5 @@
 import os
+import datetime
 
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session
@@ -21,6 +22,14 @@ Session(app)
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///finance.db")
 
+db.execute("""
+    CREAT TABLE IF NOT EXITS users(
+           id INTERGER PRIMARY KEY AUTOINCREMENT,
+           username TEXT NOT NULL,
+           hash TEXT NOT NULL,
+           cash NUMERIC NOT NULL DEFAULT 10000.00
+    )
+""")
 
 @app.after_request
 def after_request(response):

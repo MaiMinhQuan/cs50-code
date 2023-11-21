@@ -195,4 +195,31 @@ def sell():
                         user_id = session["id"])
 
     if request.method == "POST":
-        
+        symbol = request.form.get("symbol").upper()
+        shares = request.form.get("shares")
+        if not symbol:
+            return apology("Must provide symbol")
+        elif not shares or not shares.isdigit() or int(shares) <= 0:
+            return apology("Must provide a positive number of shares")
+        else:
+            shares = int(shares)
+
+        for stock in stocks:
+            if stock["symbol"] == symbol:
+                if stock["total-shares"] < shares:
+                    return apology("Not enough shares")
+                else:
+                    quote = lookup(symbol)
+                    if quote is None:
+                        return apology("Symbol not found")
+                    price = quote["price"]
+                    total_sale = shares * price
+
+                    db.execute("UPDATE users SET cash = cash + :total_sale WHERE id = :user_id", total_sale = total_sale, user_id = session["user_id"])
+
+                    db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (:user_id, :symbol, :shares, :price)",
+                                user_id = session["user_id"], symbol = symbol, shares = shares, price = price)
+
+
+
+

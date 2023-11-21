@@ -7,9 +7,8 @@
 {% block main %}
     <h1>Quote</h1>
     <form action="/quote" method="post">
-        <div class="mb-3">
-            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="symbol" placeholder="Symbol" type="text">
-        </div>
-        <button class="btn btn-primary" type="submit">Quote</button>
+        <label for="symbol">Symbol</label>
+        <input autofocus class="form-control mx-auto w-auto" name="symbol" placeholder="Symbol" type="text">
+        <button class="btn btn-primary" type="submit">Get Quote</button>
     </form>
 {% endblock %}

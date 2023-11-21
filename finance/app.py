@@ -126,6 +126,9 @@ def register():
         if not confirmation:
             return apology("Must Give Confirmation")
 
+        if passowrd != confirmation:
+            return apology("Password Does Not Match")
+
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
 def sell():

@@ -31,6 +31,18 @@ db.execute("""
     )
 """)
 
+db.execute("""
+    CREAT TABLE IF NOT EXITS transactions(
+           id INTERGER PRIMARY KEY AUTOINCREMENT,
+           user_id INTEGER NOT NULL
+           symbol TEXT NOT NULL,
+           shares INTEGER NOT NULL,
+           price NUMERIC NOT NULL,
+           timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+           FOREIGN KEY (user_id) REFERENCES users (id)
+    )
+""")
+
 @app.after_request
 def after_request(response):
     """Ensure responses aren't cached"""
@@ -44,8 +56,13 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-    return apology("TODO")
+    user_id = session["user_id"]
+    rows = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
+    if len(rows) != 1:
+        return apology("user not found", 400)
+    cash = rows[0]["cash"]
 
+    stocks = db.execute("SELECT symbol, SUM(shares) AS total_shares FROM")
 
 @app.route("/buy", methods=["GET", "POST"])
 @login_required

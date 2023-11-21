@@ -92,7 +92,8 @@ def buy():
 @login_required
 def history():
     """Show history of transactions"""
-    return apology("TODO")
+    transactions = db.execute("SELECT * FROM transactions WHERE user_id = :user_id ORDER BY timestamp DESC", user_id = session["user_id"])
+    return render_template("history.html", transactions = transactions)
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -218,7 +219,7 @@ def sell():
                     db.execute("UPDATE users SET cash = cash + :total_sale WHERE id = :user_id", total_sale = total_sale, user_id = session["user_id"])
 
                     db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (:user_id, :symbol, :shares, :price)",
-                                user_id = session["user_id"], symbol = symbol, shares = shares, price = price)
+                                user_id = session["user_id"], symbol = symbol, shares = - shares, price = price)
 
 
 

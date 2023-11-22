@@ -24,7 +24,7 @@ db = SQL("sqlite:///finance.db")
 
 db.execute("""
     CREATE TABLE IF NOT EXISTS users(
-           id INTERGER PRIMARY KEY AUTOINCREMENT,
+           id INTEGER PRIMARY KEY AUTOINCREMENT,
            username TEXT NOT NULL,
            hash TEXT NOT NULL,
            cash NUMERIC NOT NULL DEFAULT 10000.00
@@ -33,7 +33,7 @@ db.execute("""
 
 db.execute("""
     CREATE TABLE IF NOT EXISTS transactions(
-           id INTERGER PRIMARY KEY AUTOINCREMENT,
+           id INTEGER PRIMARY KEY AUTOINCREMENT,
            user_id INTEGER NOT NULL,
            symbol TEXT NOT NULL,
            shares INTEGER NOT NULL,
@@ -43,8 +43,7 @@ db.execute("""
     )
 """)
 
-if name == "__main__":
-    app.run()
+
 @app.after_request
 def after_request(response):
     """Ensure responses aren't cached"""

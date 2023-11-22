@@ -199,7 +199,7 @@ def quote():
         if not request.form.get("symbol"):
             return apology("must provide symbol", 400)
 
-        stock = lookup(request.form.get("symbol"))
+        stock = lookup(request.form.get("symbol").upper())
         if stock is None:
             return apology("invalid symbol", 400)
 

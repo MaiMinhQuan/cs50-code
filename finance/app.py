@@ -108,7 +108,28 @@ def buy():
 
         total_cost = stock["price"] * shares
 
-        if cash < total_cost
+        if cash < total_cost:
+            return apology("insufficient funds", 400)
+
+        updated_cash = cash - total_cost
+        result = db.execute("UPDATE users SET cash = ? WHERE id = ?", updated_cash, user_id)
+        if not result:
+            return apology("purchase failed", 500)
+
+        result = db.execute("INSERT INTO transactions (user_id, symbol, shares, price, timestamp) VALUES (?, ?, ?, ?, ?)",
+                            user_id,
+                            stock["symbol"],
+                            shares,
+                            stock["price"],
+                            datetime.datetime.now()
+                            )
+        if not result:
+            return apology("purchase failed", 500)
+
+        return redirect("/")
+    else:
+        return render_template("buy.html")
+
 
 
 
@@ -116,7 +137,9 @@ def buy():
 @login_required
 def history():
     """Show history of transactions"""
-    return apology("TODO")
+    user_id = session["user_id"]
+    transactions = db.execute("SELECT symbol, shares, price, timestamp FROM transactions WHERE user_id = ? ORDER BY timestamp DESC", user_id)
+    return render_template("history.html", transactions = transactions)
 
 
 @app.route("/login", methods=["GET", "POST"])

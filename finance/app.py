@@ -43,6 +43,8 @@ db.execute("""
     )
 """)
 
+if name == "__main__":
+    app.run()
 @app.after_request
 def after_request(response):
     """Ensure responses aren't cached"""

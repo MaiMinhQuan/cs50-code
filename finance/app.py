@@ -23,7 +23,7 @@ Session(app)
 db = SQL("sqlite:///finance.db")
 
 db.execute("""
-    CREAT TABLE IF NOT EXITS users(
+    CREATE TABLE IF NOT EXISTS users(
            id INTERGER PRIMARY KEY AUTOINCREMENT,
            username TEXT NOT NULL,
            hash TEXT NOT NULL,
@@ -203,7 +203,7 @@ def quote():
         if stock is None:
             return apology("invalid symbol", 400)
 
-        return render_template("quoted.html", stock =stock)
+        return render_template("quoted.html", name = stock["name"], price = stock["price"], symbol = stock["symbol"])
     else:
         return render_template("quote.html")
 

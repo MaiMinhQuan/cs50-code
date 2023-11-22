@@ -5,8 +5,8 @@
 {% endblock %}
 
 {% block main %}
-    <h2>Quote</h2>
-
-        <h3>{{ quote['name'] }} ({{ quote['symbol'] }})</h3>
-        <p>Price: {{ quote['price']|usd }}</p>
+    <h2>Quoted</h2>
+    <h3>Name: {{ name }}</h3>
+    <h3>Price: {{ price }}</h3>
+    <h3>Symbol: {{ symbol }}</h3>
 {% endblock %}

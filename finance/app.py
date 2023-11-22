@@ -290,7 +290,7 @@ def sell():
         return redirect("/")
     else:
         user_id = session["user_id"]
-        stocks = db.execute("SELECT symbol, SUM(shares) AS total_shares FROM transactions WHERE user_id = ? GROUP BY symbol HAVING total_share > 0", user_id)
+        stocks = db.execute("SELECT symbol, SUM(shares) AS total_shares FROM transactions WHERE user_id = ? GROUP BY symbol HAVING total_shares > 0", user_id)
         return render_template("sell.html", stocks = stocks)
 
 

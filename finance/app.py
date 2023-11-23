@@ -38,18 +38,13 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/compose", methods=["GET", "POST"])
+@app.route("/history")
 @login_required
-def compose():
-
+def history():
     return apology("TODO")
 
 
-@app.route("/sent")
-@login_required
-def sent():
 
-    return apology("TODO")
 
 
 @app.route("/login", methods=["GET", "POST"])

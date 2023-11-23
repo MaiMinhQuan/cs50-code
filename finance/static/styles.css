@@ -1,4 +1,7 @@
 /* Size for brand */
+body {
+    background-image: url("Quiz.jpg");
+  }
 nav .navbar-brand
 {
     font-size: xx-large;

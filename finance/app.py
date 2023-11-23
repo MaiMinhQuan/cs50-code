@@ -111,7 +111,16 @@ def register():
     if request.method == "GET":
         return render_template("register.html")
     else:
-        
+        email = request.form.get("email")
+        password = request.form.get("password")
+        confirm = request.form.get("confirm")
+
+        if not email or not password or not confirm:
+            return apology("No Empty Fields")
+        if password != confirm:
+            return apology("Password does not match")
+
+        hash = generate_password_hash(password)
 
 
 @app.route("/reply", methods=["GET", "POST"])

@@ -1,6 +1,6 @@
 /* Size for brand */
 body {
-    background-image: url("quiz4.jpg");
+    background-image: url("quiz.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -126,7 +126,14 @@ nav .navbar-brand .green
 }
 
 .sea {
-  background-image: url("quiz.jpg");
+  background-image: url("sea.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.universe {
+  background-image: url("universe.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;

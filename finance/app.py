@@ -35,15 +35,15 @@ def after_request(response):
 @login_required
 def index():
 
-    return render_template("index.html")
+    return render_template("homepage.html")
 
 
 
 
-@app.route("/homepage")
+@app.route("/index")
 @login_required
-def history():
-    return apology("TODO")
+def index():
+    return render_template("index.html")
 
 
 

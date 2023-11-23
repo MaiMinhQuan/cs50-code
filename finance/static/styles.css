@@ -1,6 +1,8 @@
 /* Size for brand */
 body {
     background-image: url("quiz1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 nav .navbar-brand
 {

@@ -138,3 +138,10 @@ nav .navbar-brand .green
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+
+.plant {
+  background-image: url("plant.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}

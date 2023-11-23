@@ -101,10 +101,17 @@ def logout():
 
 @app.route("/email", methods=["GET", "POST"])
 @login_required
-def quote():
+def email():
     """view email detail."""
     return apology("TODO")
 
+@app.route("/register", methods=["GET", "POST"])
+@login_required
+def register():
+    if request.method == "GET":
+        return render_template("register.html")
+
+    return apology("TODO")
 
 @app.route("/reply", methods=["GET", "POST"])
 def reply():
@@ -112,8 +119,4 @@ def reply():
     return apology("TODO")
 
 
-@app.route("/register", methods=["GET", "POST"])
-@login_required
-def register():
 
-    return apology("TODO")

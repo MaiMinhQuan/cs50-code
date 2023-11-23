@@ -35,7 +35,7 @@ def after_request(response):
 @login_required
 def index():
 
-    return apology("TODO")
+    return render_template("index.html")
 
 
 @app.route("/compose", methods=["GET", "POST"])

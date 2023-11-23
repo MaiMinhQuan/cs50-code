@@ -41,7 +41,10 @@ def after_request(response):
     response.headers["Pragma"] = "no-cache"
     return response
 
-
+@app.route("/")
+@login_required
+def index():
+    return render_template("login.html")
 
 @app.route("/login", methods=["GET", "POST"])
 def login():

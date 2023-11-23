@@ -40,12 +40,20 @@ def index():
 
 
 
-@app.route("/quiz")
+@app.route("/sea")
 @login_required
-def quiz():
-    return render_template("index.html")
+def sea():
+    return render_template("sea.html")
 
+@app.route("/universe")
+@login_required
+def universe():
+    return render_template("universe.html")
 
+@app.route("/plant")
+@login_required
+def plant():
+    return render_template("plant.html")
 
 
 

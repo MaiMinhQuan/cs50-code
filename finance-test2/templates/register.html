@@ -1,0 +1,37 @@
+{% extends "layout.html" %} {% block title %} Register {% endblock %} {% block
+head%} Register {% endblock %} {% block body %}
+<form method="post">
+  <div class="mb-3">
+    <input
+      autocomplete="off"
+      autofocus
+      class="form-control"
+      name="DUsername"
+      placeholder="Desired Username"
+      type="text"
+    />
+  </div>
+  <div class="mb-3">
+    <input
+      autocomplete="off"
+      autofocus
+      class="form-control"
+      name="Dpassword"
+      placeholder="Desired Password"
+      type="password"
+    />
+  </div>
+  <div class="mb-3">
+    <input
+      autocomplete="off"
+      autofocus
+      class="form-control"
+      name="EmailUser"
+      placeholder="Your email address"
+      type="text"
+    />
+  </div>
+  <button class="btn btn-dark" type="submit">Register</button>
+  <a href="login.html" class="btn"> Already have an account? Log in </a>
+</form>
+{% endblock %}

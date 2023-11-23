@@ -124,3 +124,10 @@ nav .navbar-brand .green
     border-radius: 4px;
     cursor: pointer;
 }
+
+.sea {
+  background-image: url("quiz.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}

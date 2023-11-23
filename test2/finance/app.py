@@ -45,34 +45,9 @@ def after_request(response):
 @app.route("/")
 @login_required
 def index():
-    """Show portfolio of stocks"""
-    user_id = session["user_id"]
-    rows = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
-    if len(rows) != 1:
-        return apology("user not found", 400)
-    cash = rows[0]["cash"]
-
-    stocks = db.execute("SELECT symbol, SUM(shares) as total_shares FROM transactions WHERE user_id = ? GROUP BY symbol HAVING total_shares > 0",
-                        user_id)
-
-    total_value = cash
-    for stock in stocks:
-        symbol = stock["symbol"]
-        shares = stock["total_shares"]
-        stock_info = lookup(symbol)
-        if stock_info is None:
-            return apology("lookup failed", 500)
-        stock["name"] = stock_info["name"]
-        stock["price"] = stock_info["price"]
-        stock["value"] = stock_info["price"] * shares
-        total_value += stock["value"]
-
-    return render_template("index.html", stocks = stocks, cash = cash, total_value = total_value)
 
 
-
-
-
+    return render_template("homepage.html")
 
 
 @app.route("/login", methods=["GET", "POST"])

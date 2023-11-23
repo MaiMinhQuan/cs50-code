@@ -145,3 +145,10 @@ nav .navbar-brand .green
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+
+.earth {
+  background-image: url("earth.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}

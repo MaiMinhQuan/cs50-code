@@ -19,7 +19,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # Configure CS50 Library to use SQLite database
-db = SQL("sqlite:///finance.db")
+db = SQL("sqlite:///project.db")
 
 
 @app.after_request
@@ -34,21 +34,21 @@ def after_request(response):
 @app.route("/")
 @login_required
 def index():
-    """Show portfolio of stocks"""
+
     return apology("TODO")
 
 
-@app.route("/buy", methods=["GET", "POST"])
+@app.route("/compose", methods=["GET", "POST"])
 @login_required
-def buy():
-    """Buy shares of stock"""
+def compose():
+
     return apology("TODO")
 
 
-@app.route("/history")
+@app.route("/sent")
 @login_required
-def history():
-    """Show history of transactions"""
+def sent():
+
     return apology("TODO")
 
 
@@ -99,9 +99,9 @@ def logout():
     return redirect("/")
 
 
-@app.route("/quote", methods=["GET", "POST"])
+@app.route("/email", methods=["GET", "POST"])
 @login_required
-def quote():
+def email():
     """Get stock quote."""
     return apology("TODO")
 
@@ -112,8 +112,8 @@ def register():
     return apology("TODO")
 
 
-@app.route("/sell", methods=["GET", "POST"])
+@app.route("/reply", methods=["GET", "POST"])
 @login_required
-def sell():
+def reply():
     """Sell shares of stock"""
     return apology("TODO")

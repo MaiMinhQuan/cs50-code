@@ -40,9 +40,9 @@ def index():
 
 
 
-@app.route("/index")
+@app.route("/quiz")
 @login_required
-def index():
+def quiz():
     return render_template("index.html")
 
 

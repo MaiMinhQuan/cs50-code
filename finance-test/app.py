@@ -112,8 +112,8 @@ def reply():
     return apology("TODO")
 
 
-@app.route("/sell", methods=["GET", "POST"])
+@app.route("/register", methods=["GET", "POST"])
 @login_required
-def sell():
-    """Sell shares of stock"""
+def register():
+    
     return apology("TODO")

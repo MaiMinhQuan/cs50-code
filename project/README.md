@@ -14,7 +14,9 @@ The file "requirements.txt" contains the names of the libraries that need to be 
 The "flask_session" directory contains the "flask" library that helps us maintain user login during use.
 
 The "templates" folder contains the html file that installs the website.
+
 The "static" folder contains css files and background images of the website
+
 In particular, the file "apology.html" shows errors when users use the website.
 The file "homepage.html" appears on the website's homepage after logging in.
 The file "layout.html" is the general layout of the website's html files.

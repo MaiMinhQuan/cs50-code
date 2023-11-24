@@ -4,10 +4,15 @@
 My program provides interesting questions about different areas of life to help users gain new knowledge about the world around us.
 
 The "app.py" file uses "Flask" to control login, account registration and transitions between websites.
+
 The "helpers.py" file installs a few functions that make installing "app.py" easier.
+
 The file "project.db" installs the user's account database.
+
 The file "requirements.txt" contains the names of the libraries that need to be installed.
+
 The "flask_session" directory contains the "flask" library that helps us maintain user login during use.
+
 The "templates" folder contains the html file that installs the website.
 The "static" folder contains css files and background images of the website
 In particular, the file "apology.html" shows errors when users use the website.
